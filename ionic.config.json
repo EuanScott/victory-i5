@@ -1,0 +1,7 @@
+{
+  "name": "victory-i5",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

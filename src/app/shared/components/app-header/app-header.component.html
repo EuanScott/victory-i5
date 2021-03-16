@@ -1,0 +1,44 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button *ngIf="!headerData.showBackButton"></ion-menu-button>
+
+    <ion-button *ngIf="headerData.showBackButton">
+      <ion-icon name="arrow-back-sharp">
+      </ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-title>
+    {{ headerData.title }}
+  </ion-title>
+
+  <ion-buttons slot="end"
+               class="status__buttons">
+    <ion-button (click)="presentPopover($event)">
+      <!-- Battery Level -->
+      <ion-icon *ngIf="appStateService.deviceInfo.battery.level <= 30"
+                color="danger"
+                name="battery-half-outline"></ion-icon>
+
+      <!-- Connection -->
+      <ion-icon *ngIf="appStateService.deviceConnection.connected"
+                color="success"
+                name="wifi-outline">
+      </ion-icon>
+      <ion-icon *ngIf="!appStateService.deviceConnection.connected"
+                color="danger"
+                name="cloud-offline-outline">
+      </ion-icon>
+
+      <!-- Fiscal Printer -->
+      <ion-icon name="document-outline"
+                [color]="appStateService.deviceConnection.fiscalConnected ? 'primary' : 'danger'">
+      </ion-icon>
+
+      <!-- Controller -->
+      <ion-icon name="print-outline"
+                [color]="appStateService.deviceConnection.piConnected  && appStateService.deviceConnection.printerConnected ? 'secondary' : 'danger'">
+      </ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>

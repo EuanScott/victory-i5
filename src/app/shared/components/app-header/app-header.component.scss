@@ -1,0 +1,11 @@
+ion-toolbar {
+  .status__buttons {
+    ion-button {
+      --ripple-color: transparent;
+
+      ion-icon {
+        padding: 0 4px;
+      }
+    }
+  }
+}

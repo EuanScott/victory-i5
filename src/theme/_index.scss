@@ -1,0 +1,6 @@
+@import './button';
+@import './custom-variables';
+
+ion-button {
+  --border-radius: $border-radius-medium;
+}

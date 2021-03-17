@@ -21,23 +21,23 @@
                 name="battery-half-outline"></ion-icon>
 
       <!-- Connection -->
-      <ion-icon *ngIf="appStateService.deviceConnection.connected"
+      <ion-icon *ngIf="appStateService.deviceConnectivity.connected"
                 color="success"
                 name="wifi-outline">
       </ion-icon>
-      <ion-icon *ngIf="!appStateService.deviceConnection.connected"
+      <ion-icon *ngIf="!appStateService.deviceConnectivity.connected"
                 color="danger"
                 name="cloud-offline-outline">
       </ion-icon>
 
       <!-- Fiscal Printer -->
       <ion-icon name="document-outline"
-                [color]="appStateService.deviceConnection.fiscalConnected ? 'primary' : 'danger'">
+                [color]="appStateService.deviceConnectivity.fiscalConnected ? 'primary' : 'danger'">
       </ion-icon>
 
       <!-- Controller -->
       <ion-icon name="print-outline"
-                [color]="appStateService.deviceConnection.piConnected  && appStateService.deviceConnection.printerConnected ? 'secondary' : 'danger'">
+                [color]="appStateService.deviceConnectivity.piConnected  && appStateService.deviceConnectivity.printerConnected ? 'secondary' : 'danger'">
       </ion-icon>
     </ion-button>
   </ion-buttons>

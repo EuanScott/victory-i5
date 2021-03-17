@@ -23,7 +23,7 @@ export class SalesDataComponent extends BasePage {
 
   //#region Markup Getters
 
-  get componentData() {
+  get componentData () {
     return this._componentData
   }
 

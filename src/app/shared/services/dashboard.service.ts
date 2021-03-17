@@ -8,19 +8,20 @@ import * as Models from '../models/index'
 export class DashboardService {
 
   private _salesKpi: Models.SalesKpi
+  private _cashTotals: Models.CashTotals
 
   constructor () { }
 
+  //#region Sales KPI
+
   /**
    * Gets the Sales KPI Data for the Store that the user is currently logged into
-   * 
-   * TODO: API call still to be made
    * 
    * @returns SalesKpi
    */
   getSalesKpi (): Models.SalesKpi {
     if (!this._salesKpi) {
-      this._salesKpi = this.setSalesKpi()
+      return this._salesKpi = this.setSalesKpi()
     } else {
       return this._salesKpi
     }
@@ -28,6 +29,8 @@ export class DashboardService {
 
   /**
    * Sets the Sales KPI Data from the API to a local object type
+   * 
+   * TODO: API call still to be made
    * 
    * @returns SalesKpi
    */
@@ -46,4 +49,33 @@ export class DashboardService {
     return this._salesKpi[field]
   }
 
+  //#endregion
+
+  //#region Cash Totals
+
+  /**
+   * Gets the Sales KPI Data for the Store that the user is currently logged into
+   * 
+   * @returns CashTotals
+   */
+   getCashTotals (): Models.CashTotals {
+    if (!this._cashTotals) {
+      return this._cashTotals = this.setCashTotals()
+    } else {
+      return this._cashTotals
+    }
+  }
+
+  /**
+   * Sets the Sales KPI Data from the API to a local object type
+   *
+   * TODO: API call still to be made
+   * 
+   * @returns CashTotals
+   */
+  private setCashTotals (): Models.CashTotals {
+    return new Models.CashTotals(null)
+  }
+
+  //#endregion
 }

@@ -1,3 +1,4 @@
+//#region API/Provider Data
 export class SalesKpi {
   totalSalesForDay: number
   totalSalesForWeek: number
@@ -11,6 +12,10 @@ export class SalesKpi {
     this.totalTransactionsForDay = data && data.totalTransactionsForDay ? data.totalTransactionsForDay : 0
   }
 }
+
+//#region
+
+//#region Page Data
 
 export class SalesSliderData {
   title: string
@@ -27,3 +32,5 @@ export class SalesSliderData {
     this.color = data && data.color ? data.color : ''
   }
 }
+
+//#endregion

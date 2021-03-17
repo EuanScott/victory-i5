@@ -1,4 +1,4 @@
-export interface DeviceConnection {
+export interface DeviceConnectivity {
   connected: boolean
   fiscalConnected: boolean
   piConnected: boolean

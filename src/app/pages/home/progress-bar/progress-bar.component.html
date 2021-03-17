@@ -1,3 +1,20 @@
-<p>
-  progress-bar works!
-</p>
+<div *ngFor="let dataEntry of componentData"
+     class="ion-padding">
+  <div class="ion-text-left">
+    <ion-text>
+      {{ dataEntry.title }}
+    </ion-text>
+  </div>
+
+  <div class="ion-text-right">
+    <ion-text>MKW {{ dataEntry.progress | number:'1.0' }}
+    </ion-text>
+    <ion-text color="medium">
+      / {{ dataEntry.target | number:'1.0' }}
+    </ion-text>
+  </div>
+
+  <ion-progress-bar value="{{dataEntry.progress / dataEntry.target}}"
+                    buffer="{{dataEntry.progress / dataEntry.target}}">
+  </ion-progress-bar>
+</div>

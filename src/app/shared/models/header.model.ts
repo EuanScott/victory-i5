@@ -1,4 +1,4 @@
-import { AppStateService } from '../services/index'
+//#region Page Data
 
 export class Header {
   title: string
@@ -16,3 +16,5 @@ export interface PopoverHeader {
   action: string
   icon: string
 }
+
+//#endregion

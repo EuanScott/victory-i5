@@ -1,9 +1,11 @@
+import { AppStateService } from '../services/index'
+
 export class Header {
-  title: string
+  title?: string
   showBackButton?: false
 
-  constructor (data) {
-    this.title = data && data.title ? data.title : 'Default Title'
+  constructor (data, private appStateService?: AppStateService) {
+    this.title = data && data.title ? data.title : appStateService.shopInfo.name
     this.showBackButton = data && data.showBackButton ? data.showBackButton : false
   }
 }

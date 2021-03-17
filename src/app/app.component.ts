@@ -10,7 +10,7 @@ import { AppStateService } from './shared/services/index'
 })
 export class AppComponent{
   appPages = [
-    { title: 'Home',  url: '/pages/home/dashboard', icon: 'home' },
+    { title: 'Home',  url: '/pages/home/tabs', icon: 'home' },
     { title: 'Sales / Quotes', url: '/pages/sales-history', icon: 'bar-chart' },
     { title: 'Calculator', url: '/folder/Favorites', icon: 'calculator' },
     { title: 'Cash Management', url: '/folder/Archived', icon: 'cash' },

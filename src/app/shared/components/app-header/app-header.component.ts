@@ -16,6 +16,10 @@ export class AppHeaderComponent extends BasePage implements OnInit {
 
   constructor () {
     super()
+
+    setTimeout(() => {
+      console.log(this.headerData)
+    }, 1000);
   }
 
   ngOnInit () { }

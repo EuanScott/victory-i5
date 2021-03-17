@@ -1,11 +1,12 @@
 import { AppStateService } from '../services/index'
 
 export class Header {
-  title?: string
+  title: string
   showBackButton?: false
 
-  constructor (data, private appStateService?: AppStateService) {
-    this.title = data && data.title ? data.title : appStateService.shopInfo.name
+  // TODO: Made the page title dynamic
+  constructor (data) {
+    this.title = data && data.title ? data.title : 'Victory'
     this.showBackButton = data && data.showBackButton ? data.showBackButton : false
   }
 }

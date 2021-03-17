@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 import { ComponentsModule } from '../../shared/components/components.module';
 
+import { SalesDataComponent } from './sales-data/sales-data.component'
+import { ProgressBarComponent } from './progress-bar/progress-bar.component'
+
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -17,6 +20,10 @@ import { HomePage } from './home.page';
     ComponentsModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    SalesDataComponent,
+    ProgressBarComponent
+  ]
 })
-export class HomePageModule {}
+export class HomePageModule { }

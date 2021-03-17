@@ -1,0 +1,26 @@
+<ion-slides pager="false"
+            [options]="slideOptions">
+  <ion-slide *ngFor="let dataEntry of componentData">
+    <ion-card [color]="dataEntry.color"
+              class="ion-padding">
+      <ion-card-header class="ion-no-padding">
+        <ion-card-title class="ion-text-left">
+          <ion-text size-12>
+            {{ dataEntry.title }}
+          </ion-text>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="ion-no-padding ion-text-left">
+        <ion-text size-16>
+          {{ dataEntry.amount | number: '1.0-0' }}
+        </ion-text>
+        <ion-text size-14
+                  class="content__subtitle">
+          {{ dataEntry.subtitle }}
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-slide>
+</ion-slides>

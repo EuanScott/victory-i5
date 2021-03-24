@@ -4,14 +4,17 @@ import { IonicModule } from '@ionic/angular'
 import { FormsModule } from '@angular/forms'
 
 import { AppHeaderComponent } from './app-header/app-header.component'
+import { KeypadComponent } from './keypad/keypad.component'
 
 const IMPORTS = [
 ]
 const DECLARATIONS = [
-  AppHeaderComponent
+  AppHeaderComponent,
+  KeypadComponent
 ]
 const EXPORTS = [
-  AppHeaderComponent
+  AppHeaderComponent,
+  KeypadComponent
 ]
 const PROVIDERS = [
 ]

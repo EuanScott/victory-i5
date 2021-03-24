@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 
@@ -8,10 +9,10 @@ import { AppStateService } from './shared/services/index'
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent{
+export class AppComponent {
   appPages = [
-    { title: 'Home',  url: '/pages/home/tabs', icon: 'home' },
-    { title: 'Sales / Quotes', url: '/pages/sales-history', icon: 'bar-chart' },
+    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'Sales / Quotes', url: '/sales-history', icon: 'bar-chart' },
     { title: 'Calculator', url: '/folder/Favorites', icon: 'calculator' },
     { title: 'Cash Management', url: '/folder/Archived', icon: 'cash' },
     { title: 'Stock Management', url: '/folder/Trash', icon: 'cube' },
@@ -19,12 +20,31 @@ export class AppComponent{
     { title: 'Reports', url: '/folder/Spam', icon: 'analytics' }
   ]
 
-  constructor(
+  constructor (
     public appStateService: AppStateService,
-    private menuController: MenuController
-  ) {}
+    private menuController: MenuController,
+    private router: Router
+  ) {
+    /**
+     * Sets the border-radius of the side menu
+     */
+    setTimeout(() => {
+      document.querySelector('ion-menu').shadowRoot.querySelector('.menu-inner').setAttribute('style', 'border-radius: 0 12px 0 0');
+    }, 1000)
+  }
 
-  closeMenu() {
+  /**
+   * Closes the side-menu
+   */
+  closeMenu () {
     this.menuController.close()
+  }
+
+  /**
+   * Calls the closeMenu() method and sends the user to the login page
+   */
+  logout () {
+    this.closeMenu()
+    this.router.navigate(['/login'])
   }
 }

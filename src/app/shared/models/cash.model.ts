@@ -101,11 +101,13 @@ export class ProgressBarData {
   title: string
   progress: number
   target: number
+  color: string
 
   constructor (data) {
     this.title = data && data.title ? data.title : ''
     this.progress = data && data.progress ? data.progress : 0
     this.target = data && data.target ? data.target : 0
+    this.color = data &&data.color ? data.color : 'primary'
   }
 }
 

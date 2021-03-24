@@ -1,9 +1,31 @@
-<ion-header>
+<ion-header [ngClass]="!boxShadow ? 'ion-no-border' : ''">
   <app-header [data]="headerData"></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content (ionScroll)="scrolling($event)">
   <sales-data [data]="salesData"></sales-data>
+
+  <sales-graph [data]="saleTrendsData"></sales-graph>
 
   <progress-bar [data]="progressBarData"></progress-bar>
 </ion-content>
+
+
+<!-- <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="dashboard">
+      <ion-icon name="speedometer-outline"></ion-icon>
+      <ion-label>dashboard</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="shop">
+      <ion-icon name="bag-handle-outline"></ion-icon>
+      <ion-label>shop</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="basket">
+      <ion-icon name="cart-outline"></ion-icon>
+      <ion-label>basket</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->

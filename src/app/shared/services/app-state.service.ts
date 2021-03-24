@@ -56,7 +56,7 @@ export class AppStateService {
       taxPercentage: 16.5,
       captureCustomerDetails: true,
       cashManagement: {
-        maxAmountInTill: 200000,
+        maxAmountInTill: 100000,
         maxAmountInSafe: 500000
       },
       defaultSupplyingLocation: {

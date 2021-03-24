@@ -1,0 +1,15 @@
+ion-content {
+  --background: url("../../../assets/img/login-background.svg") no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  ion-img {
+    margin: 10% auto auto auto;
+    width: 50%;
+  }
+
+  keypad {
+    position: absolute;
+    bottom: 0;
+  }
+}

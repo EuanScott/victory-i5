@@ -1,5 +1,5 @@
 ion-menu {
-  --width: 100%;
+  // --width: 100%;
 
   ion-item ion-label {
     font-weight: 500;
@@ -14,11 +14,11 @@ ion-menu {
 
     ion-content {
       --background: var(--ion-item-background, var(--ion-background-color, #fff));
-      --padding-start: 8px;
-      --padding-end: 8px;
+      --padding: 0;
 
       ion-list {
-        padding: 8px 0;
+        padding: 0;
+
         ion-item {
           &.selected {
             --background: rgba(var(--ion-color-primary-rgb), 0.14);
@@ -42,8 +42,9 @@ ion-menu {
     }
 
     ion-footer {
-      border-radius: 20px 20px 0 0;
       background-color: var(--ion-color-primary);
+      border-radius: 20px 20px 0 0;
+      padding: 8px 8px 4px 8px;
 
       &::before {
         display: none;
@@ -52,11 +53,11 @@ ion-menu {
       .col__logo {
       }
       .col__logout {
-        text-align: end;
+        text-align: center;
 
-        // ion-button {
-        //   --color: var(--ion-color-secondary);
-        // }
+        ion-button {
+          --border-radius: 12px; //$border-radius-small;
+        }
       }
     }
   }

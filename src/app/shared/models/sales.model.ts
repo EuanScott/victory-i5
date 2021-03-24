@@ -13,6 +13,29 @@ export class SalesKpi {
   }
 }
 
+export class SaleTrends {
+  days: Day[]
+  weeks: Day[]
+  months: Day[]
+
+  constructor (data) {
+    this.days = data && data.days ? new Day[data.days] : []
+    this.weeks = data && data.weeks ? new Day[data.weeks] : []
+    this.months = data && data.months ? new Day[data.months] : []
+  }
+}
+
+export class Day {
+  total: number
+  date: string //Date
+
+  constructor (data) {
+    this.total = data && data.total ? data.total : 0
+    this.date = data && data.date ? data.date : '2021-01-01'
+  }
+}
+
+
 //#region
 
 //#region Page Data

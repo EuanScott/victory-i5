@@ -17,6 +17,7 @@ export class HomePage extends BasePage implements OnInit {
 
   private _salesData: Models.SalesSliderData[] = []
   private _progressBarData: Models.ProgressBarData[] = []
+  private _saleTrends: Models.SaleTrends = null
 
   constructor () {
     super()
@@ -25,6 +26,7 @@ export class HomePage extends BasePage implements OnInit {
   ngOnInit () {
     this.initializeSalesKpi()
     this.initializeCashTotals()
+    this.initializeSaleTrends()
   }
 
   /**
@@ -61,6 +63,7 @@ export class HomePage extends BasePage implements OnInit {
       }
     ]
 
+    // Sets the amount for each data card
     for (const dataEntry of this._salesData) {
       dataEntry.amount = this.dashboardService.returnSalesKpiAmount(dataEntry.name)
     }
@@ -73,13 +76,119 @@ export class HomePage extends BasePage implements OnInit {
     this._progressBarData.push(new Models.ProgressBarData({
       title: 'Cash In Till',
       progress: this.dashboardService.getCashTotals().cashInTill,
-      target: this.appStateService.branchConfig.config.cashManagement.maxAmountInTill
+      target: this.appStateService.branchConfig.config.cashManagement.maxAmountInTill,
+      color: 'primary'
     }))
     this._progressBarData.push(new Models.ProgressBarData({
       title: 'Cash In Safe',
       progress: this.dashboardService.getCashTotals().cashInSafe,
-      target: this.appStateService.branchConfig.config.cashManagement.maxAmountInSafe
+      target: this.appStateService.branchConfig.config.cashManagement.maxAmountInSafe,
+      color: 'secondary'
     }))
+  }
+
+  /**
+   * Initializes the Sale Trends graph data to be displayed on the page
+   */
+  private initializeSaleTrends () {
+    this.dashboardService.getSaleTrends()
+
+    this._saleTrends = {
+      "days": [
+        {
+          total: 0,
+          date: "2021-03-11"
+        },
+        {
+          total: 0,
+          date: "2021-03-12"
+        },
+        {
+          total: 0,
+          date: "2021-03-13"
+        },
+        {
+          total: 0,
+          date: "2021-03-14"
+        },
+        {
+          total: 0,
+          date: "2021-03-15"
+        },
+        {
+          total: 0,
+          date: "2021-03-16"
+        },
+        {
+          total: 0,
+          date: "2021-03-17"
+        }
+      ],
+      "weeks": [
+        {
+          total: 0,
+          date: "2021-02-01"
+        },
+        {
+          total: 0,
+          date: "2021-02-08"
+        },
+        {
+          total: 0,
+          date: "2021-02-15"
+        },
+        {
+          total: 0,
+          date: "2021-02-22"
+        },
+        {
+          total: 0,
+          date: "2021-03-01"
+        },
+        {
+          total: 0,
+          date: "2021-03-08"
+        },
+        {
+          total: 0,
+          date: "2021-03-15"
+        }
+      ],
+      "months": [
+        {
+          total: 21500,
+          date: "2020-08-01"
+        },
+        {
+          total: 20500,
+          date: "2020-09-01"
+        },
+        {
+          total: 0,
+          date: "2020-10-01"
+        },
+        {
+          total: 645,
+          date: "2020-11-01"
+        },
+        {
+          total: 0,
+          date: "2020-12-01"
+        },
+        {
+          total: 0,
+          date: "2021-01-01"
+        },
+        {
+          total: 0,
+          date: "2021-02-01"
+        },
+        {
+          total: 0,
+          date: "2021-03-01"
+        }
+      ]
+    }
   }
 
   //#region Markup Getters
@@ -91,11 +200,16 @@ export class HomePage extends BasePage implements OnInit {
   get salesData (): Models.SalesSliderData[] {
     return this._salesData
   }
-  
-  get progressBarData() : Models.ProgressBarData[] {
+
+  get saleTrendsData (): Models.SaleTrends {
+    return this._saleTrends
+  }
+
+  get progressBarData (): Models.ProgressBarData[] {
     return this._progressBarData
   }
-  
+
+
   //#endregion
 
 }

@@ -30,7 +30,7 @@
                       routerLinkActive="selected">
               <ion-icon slot="start"
                         [ios]="page.icon + '-outline'"
-                        [md]="page.icon + '-sharp'"></ion-icon>
+                        [md]="page.icon"></ion-icon>
               <ion-label>
                 {{ page.title }}
               </ion-label>
@@ -45,14 +45,16 @@
           <ion-row>
             <ion-col class="col__logo"></ion-col>
             <ion-col class="col__logout">
-              <ion-button color="white" fill="outline">
+              <ion-button color="white"
+                          fill="outline"
+                          (click)="logout()">
                 <ion-icon name="power-outline"></ion-icon>
                 &nbsp;
                 Log out
               </ion-button>
-              <!-- <small class="version__number">
-                v0.0.0
-              </small> -->
+              <small class="version__number">
+                v x.x.x
+              </small>
             </ion-col>
           </ion-row>
         </ion-grid>

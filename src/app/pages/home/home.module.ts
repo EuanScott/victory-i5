@@ -9,6 +9,7 @@ import { ComponentsModule } from '../../shared/components/components.module';
 
 import { SalesDataComponent } from './sales-data/sales-data.component'
 import { ProgressBarComponent } from './progress-bar/progress-bar.component'
+import { SalesGraphComponent } from './sales-graph/sales-graph.component'
 
 import { HomePage } from './home.page';
 
@@ -23,7 +24,8 @@ import { HomePage } from './home.page';
   declarations: [
     HomePage,
     SalesDataComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    SalesGraphComponent
   ]
 })
 export class HomePageModule { }

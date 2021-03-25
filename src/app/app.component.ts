@@ -11,13 +11,15 @@ import { AppStateService } from './shared/services/index'
 })
 export class AppComponent {
   appPages = [
-    { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Sales / Quotes', url: '/sales-history', icon: 'bar-chart' },
-    { title: 'Calculator', url: '/folder/Favorites', icon: 'calculator' },
-    { title: 'Cash Management', url: '/folder/Archived', icon: 'cash' },
-    { title: 'Stock Management', url: '/folder/Trash', icon: 'cube' },
-    { title: 'Stock Count', url: '/folder/Spam', icon: 'storefront' },
-    { title: 'Reports', url: '/folder/Spam', icon: 'analytics' }
+    { title: 'Home', url: '/home', icon: 'home-outline' },
+    { title: 'Sales / Quotes', url: '/sales-history', icon: 'bar-chart-outline' },
+    { title: 'Calculator', url: '/folder/Favorites', icon: 'calculator-outline' },
+    { title: 'Cash Management', url: '/folder/Archived', icon: 'cash-outline' },
+    { title: 'Stock Management', url: '/folder/Trash', icon: 'cube-outline' },
+    { title: 'Stock Count', url: '/folder/Spam', icon: 'storefront-outline' },
+    { title: 'Reports', url: '/folder/Reports', icon: 'analytics-outline' },
+    { title: 'LLTC', url: '/folder/LLTC', icon: 'leaf-outline' },
+    { title: 'SGA', url: '/folder/SGA', icon: 'train-outline' }
   ]
 
   constructor (

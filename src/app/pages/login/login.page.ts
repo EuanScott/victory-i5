@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
+import { BasePage } from '../../base'
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage extends BasePage implements OnInit {
 
-  constructor() { }
+  private _areaCodes: string[] = ['+265', '+27']
+  private _selectedAreaCode: string = null
 
-  ngOnInit() {
+  constructor () {
+    super()
   }
 
+  ngOnInit () {
+    this._selectedAreaCode = this._areaCodes[0]
+  }
+
+  /**
+   * Updates the selectedAreaCode variable
+   * 
+   * @param code The event value
+   */
+  updateAreaCode (code) {
+    this._selectedAreaCode = code.detail.value
+    console.log(this._selectedAreaCode)
+  }
+
+  //#region Markup Getters
+
+  get areaCodes (): string[] {
+    return this._areaCodes
+  }
+
+  get selectedAreaCode (): string {
+    return this._selectedAreaCode
+  }
+
+  //#endregion
 }

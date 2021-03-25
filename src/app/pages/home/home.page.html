@@ -1,8 +1,9 @@
 <ion-header [ngClass]="!boxShadow ? 'ion-no-border' : ''">
-  <app-header [data]="headerData"></app-header>
+  <header [data]="headerData"></header>
 </ion-header>
 
-<ion-content (ionScroll)="scrolling($event)">
+<ion-content fullscreen="true"
+             (ionScroll)="scrolling($event)">
   <sales-data [data]="salesData"></sales-data>
 
   <sales-graph [data]="saleTrendsData"></sales-graph>

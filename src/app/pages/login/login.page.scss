@@ -8,6 +8,26 @@ ion-content {
     width: 50%;
   }
 
+  ion-grid {
+    padding: 24px;
+
+    ion-select {
+      --background: transparent;
+
+      border: 2px solid var(--ion-color-white);
+      border-radius: 16px;
+      color: var(--ion-color-white);
+      height: 100%;
+      padding: 16px 12px;
+    }
+    ion-input {
+      border: 2px solid var(--ion-color-white);
+      border-radius: 16px;
+      color: var(--ion-color-white);
+      height: 100%;
+    }
+  }
+
   keypad {
     position: absolute;
     bottom: 0;

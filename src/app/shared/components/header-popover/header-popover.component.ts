@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core'
 import * as Models from '../../models/index'
 
 @Component({
-  selector: 'app-header-popover',
+  selector: 'header-popover',
   templateUrl: './header-popover.component.html',
   styleUrls: ['./header-popover.component.scss'],
 })
 export class HeaderPopoverComponent implements OnInit {
 
-  popoverOptions: Models.PopoverHeader[] = [
+  private _popoverItems: Models.PopoverHeader[] = [
     { label: 'Get Controller Status', action: 'Status', icon: 'alert-circle-outline' },
     { label: 'Restart Controller', action: 'Restart', icon: 'refresh-outline' },
     { label: 'Refresh Laser Printer', action: 'Refresh', icon: 'sync-outline' },
@@ -18,8 +18,15 @@ export class HeaderPopoverComponent implements OnInit {
     { label: 'Drawer Kick', action: 'Drawer', icon: 'cash-outline' },
   ]
 
-  constructor () { }
+  constructor () {
+   }
 
   ngOnInit () { }
+
+  
+  get popoverItems() : Models.PopoverHeader[] {
+    return this._popoverItems
+  }
+  
 
 }

@@ -6,11 +6,11 @@ import * as Models from '../../models/index'
 import { BasePage } from '../../../base'
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './app-header.component.html',
-  styleUrls: ['./app-header.component.scss'],
+  selector: 'header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
-export class AppHeaderComponent extends BasePage implements OnInit {
+export class HeaderComponent extends BasePage implements OnInit {
 
   @Input('data') headerData: Models.Header
 

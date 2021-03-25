@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common'
 import { IonicModule } from '@ionic/angular'
 import { FormsModule } from '@angular/forms'
 
-import { AppHeaderComponent } from './app-header/app-header.component'
+import { HeaderComponent } from './header/header.component'
+import { HeaderPopoverComponent } from './header-popover/header-popover.component'
 import { KeypadComponent } from './keypad/keypad.component'
 
 const IMPORTS = [
 ]
 const DECLARATIONS = [
-  AppHeaderComponent,
+  HeaderComponent,
+  HeaderPopoverComponent,
   KeypadComponent
 ]
 const EXPORTS = [
-  AppHeaderComponent,
+  HeaderComponent,
+  HeaderPopoverComponent,
   KeypadComponent
 ]
 const PROVIDERS = [

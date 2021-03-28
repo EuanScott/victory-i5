@@ -4,12 +4,6 @@ The original Victory mPos system as developed while working at [Vectra](http://v
 
 The idea behind the project was to take the original version created in Ionic 3 and to update it to not only use the latest version of Ionic with Capacitor, but also to update & improve the code base as a whole. Creating a new coding standard that will make the project easier to work on and easier to learn as new developers join the team.
 
-<br/>
-
----
-
-<br/> 
-
 ## Overall goals of the project:
 - Implement the Mobile App using the latest mobile technologies.
 - Refactor the code to be simpler and more streamlined.

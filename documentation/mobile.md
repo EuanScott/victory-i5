@@ -7,8 +7,7 @@
 </div> -->
 <!-- ![Victory](./src/assets/img/logo.svg) -->
 
-<br/>
-
+# Documentation for the Mobile App
 ## Table of Contents
 1. [Overview](#overview)
 2. [The current solution](#the-current-mPos-Application)

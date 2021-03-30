@@ -9,13 +9,9 @@
 4. [Development](#development)
 5. [Deployment](#deployment)
 6. [Resources](#resources)
-
-<br/>
-
 # Overview
 
 The Victory mPos solution created for The Meridian Group to propel their business into the 21st century.
-
 
 # Sections
 

@@ -5,7 +5,10 @@
 ## Table of Contents
 1. [Overview](#overview)
 2. [Sections](#sections)
-3. [Resources](#resources)
+3. [Setup](#setup)
+4. [Development](#development)
+5. [Deployment](#deployment)
+6. [Resources](#resources)
 
 <br/>
 

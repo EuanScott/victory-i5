@@ -86,13 +86,11 @@ ion-menu {
       display: none;
     }
 
-    // .col__logo {
-    // }
     .col__logout {
       text-align: center;
 
       ion-button {
-        --border-radius: 12px; //$border-radius-small;
+        --border-radius: 12px;
       }
     }
   }

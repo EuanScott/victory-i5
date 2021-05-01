@@ -59,7 +59,7 @@ export class KeypadComponent extends BasePage implements OnInit {
 
     if (this._pinCode.length === 4) {
 
-      this.loaderService.presentLoader()
+      this.loaderService.presentLoader('login')
       setTimeout(() => {
         this.router.navigate(['/home'])
       }, 1000);

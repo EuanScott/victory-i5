@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as Models from '../../shared/models'
+import * as Enums from '../..//shared/enums'
 
 import { BasePage } from '../../base'
 
@@ -27,6 +28,8 @@ export class HomePage extends BasePage implements OnInit {
     this.initializeSalesKpi()
     this.initializeCashTotals()
     this.initializeSaleTrends()
+
+    this.loaderService.dismissLoader('login')
   }
 
   /**

@@ -1,14 +1,21 @@
 import { Injector } from '@angular/core'
 import { Router } from '@angular/router'
 
-import { LoadingController, PopoverController } from '@ionic/angular'
+import {
+  AlertController,
+  LoadingController,
+  PopoverController,
+  ToastController
+} from '@ionic/angular'
 
 import { appInjector } from './shared/helpers'
 
 import {
+  AlertService,
   AppStateService,
   DashboardService,
-  LoaderService
+  LoaderService,
+  ToastService
 } from './shared/services/index'
 
 export class BasePage {
@@ -17,45 +24,47 @@ export class BasePage {
   injector: Injector = appInjector()
 
   // Custom Services
+  protected alertService: AlertService
   protected appStateService: AppStateService
   protected dashboardService: DashboardService
   protected loaderService: LoaderService
+  protected toastService: ToastService
 
   // Ionic Controllers
-  protected popoverController: PopoverController
+  protected alertController: AlertController
   protected loadingController: LoadingController
+  protected popoverController: PopoverController
+  protected toastController: ToastController
 
   // Angular
   protected router: Router
 
-  // Class variables
-  private _boxShadow: boolean = false
+  // Page Variables
+  private _pageName: string
 
-  constructor () {
+  constructor (pageName: string = '') {
     // Custom Services
+    this.alertService = this.injector.get(AlertService)
     this.appStateService = this.injector.get(AppStateService)
     this.dashboardService = this.injector.get(DashboardService)
     this.loaderService = this.injector.get(LoaderService)
+    this.toastService = this.injector.get(ToastService)
 
     // Ionic Controllers
-    this.popoverController = this.injector.get(PopoverController)
+    this.alertController = this.injector.get(AlertController)
     this.loadingController = this.injector.get(LoadingController)
+    this.popoverController = this.injector.get(PopoverController)
+    this.toastController = this.injector.get(ToastController)
 
     //Angular
     this.router = this.injector.get(Router)
+
+    // Page Variables
+    this._pageName = pageName
   }
 
-  /**
-   * Called on each ionScroll event
-   * 
-   * @param scroll The scroll event
-   */
-  scrolling (scroll) {
-    this._boxShadow = scroll.detail.scrollTop > 12
-  }
-
-  get boxShadow (): boolean {
-    return this._boxShadow
+  ionViewDidEnter() {
+    this.toastService.dismissToast()
   }
 }
 

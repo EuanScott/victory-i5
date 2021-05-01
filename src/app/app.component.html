@@ -2,21 +2,25 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content"
               type="overlay">
-      <ion-header>
-        <ion-toolbar color="primary">
-          <!-- <ion-buttons slot="start">
-            <ion-button (click)="closeMenu()">
-              <ion-icon name="close-sharp"
-                        color="primary">
-              </ion-icon>
-            </ion-button>
-          </ion-buttons> -->
 
-          <ion-title color="white">
-            {{ appStateService.branchInfo.name }}
-          </ion-title>
-        </ion-toolbar>
-      </ion-header>
+      <div class="tester"> </div>
+
+      <ion-buttons slot="start">
+        <ion-button (click)="closeMenu()">
+          <ion-icon name="close-sharp"
+                    color="white">
+          </ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-text color="white"
+                class="title">
+        {{ appStateService.branchInfo.name }}
+      </ion-text>
+
+      <small class="version__number">
+        v x.x.x
+      </small>
 
       <ion-content class="ion-no-padding">
         <ion-list id="inbox-list"
@@ -34,7 +38,7 @@
               </ion-icon>
               <ion-label>
                 {{ page.title }}
-              
+
                 <ion-badge slot="end"
                            mode="ios"
                            color="primary"
@@ -62,9 +66,6 @@
                 &nbsp;
                 Log out
               </ion-button>
-              <small class="version__number">
-                v x.x.x
-              </small>
             </ion-col>
           </ion-row>
         </ion-grid>

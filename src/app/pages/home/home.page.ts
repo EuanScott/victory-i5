@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as Models from '../../shared/models'
 
-import { BasePage } from '../../base';
+import { BasePage } from '../../base'
 
 @Component({
   selector: 'app-home',
@@ -191,7 +191,7 @@ export class HomePage extends BasePage implements OnInit {
     }
   }
 
-  //#region Markup Getters
+  //#region MAccessors
 
   get headerData (): Models.Header {
     return this._headerData

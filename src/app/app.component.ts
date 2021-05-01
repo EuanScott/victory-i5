@@ -26,14 +26,7 @@ export class AppComponent {
     public appStateService: AppStateService,
     private menuController: MenuController,
     private router: Router
-  ) {
-    /**
-     * Sets the border-radius of the side menu
-     */
-    setTimeout(() => {
-      document.querySelector('ion-menu').shadowRoot.querySelector('.menu-inner').setAttribute('style', 'border-radius: 0 12px 0 0');
-    }, 1000)
-  }
+  ) { }
 
   /**
    * Closes the side-menu

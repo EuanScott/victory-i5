@@ -1,10 +1,10 @@
 
 
-<div style="max-width: 1024px; margin: auto; background: rgba(128, 128, 128, 0.1); padding: 8px; border-radius: 4px">
+<div style="max-width: 1024px; margin: auto; background: rgba(128, 128, 128, 0.1); padding: 16px; border-radius: 4px">
 
-<!-- <div align="center" style="margin: auto; padding-top: 16px">
+<div align="center" style="margin: auto; padding-top: 16px">
   <img src="../src/assets/img/logo.svg"/>
-</div> -->
+</div>
 <!-- ![Victory](./src/assets/img/logo.svg) -->
 
 # Documentation for the Mobile App
@@ -60,7 +60,7 @@ To quote _Mahatma Gandhi_ <small>(even though it is a fanciful quotation)</small
   style="max-width: 100vw; max-height: 100vh; transform: scale(1.2); margin-top: 100px; margin-left: 16px;"/>
 </div>
 
-<br/>
+<div style="page-break-after: always"></div>
 
 # Page breakdown
 ## Login
@@ -89,9 +89,7 @@ __Business Rules:__
 - Anyone with access to the Victory system can login to the Mobile app.
 - If a user choses to reset their pin, an SMS is sent to their registered phone number with a new pin for them to use.
 
-<br/>
-
----
+<div style="page-break-after: always"></div>
 
 ## Dashboard
 
@@ -113,7 +111,7 @@ __Business Rules:__
 - If offline login, there is no data displayed on this page.
 - __None:__ anyone that has access to the mobile app can view and use this page.
 
-<br/>
+<div style="page-break-after: always"></div>
 
 # Resources
 
@@ -126,7 +124,6 @@ __Business Rules:__
 [web_1]: http://vectra.co.za
 [web_2]: https://www.linkedin.com/in/euan-scott-software-developer-7361b9121/
 
-<br/>
 
 # Disclaimer
 The purpose of this project is to update the existing implementation of the Victory Mobile App.

@@ -1,9 +1,79 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>sales-history</ion-title>
-  </ion-toolbar>
+  <header [data]="headerData"></header>
 </ion-header>
 
 <ion-content>
+  <ion-virtual-scroll [items]="items"
+                      approxItemHeight="320px">
+    <ion-card color="grey-light"
+              *virtualItem="let item; let itemBounds = bounds;">
+      <ion-card-content>
+        <ion-grid class="ion-no-padding">
+          <ion-row>
+            <ion-col>
+              <div class="ion-text-start">
+                Sage Invoice
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="ion-text-end">
+                IN000000001
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="ion-text-start">
+                Victory Invoice
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="ion-text-end">
+                IN000000001
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="ion-text-start">
+                71618821773
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="ion-text-end">
+                IN000000001
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="ion-text-start">
+                Created Date
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="ion-text-end">
+                4/19/21, 1:14PM
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
 
+      <ion-item color="grey-light"
+                lines="none">
+        <ion-label>
+          MWK 100
+        </ion-label>
+
+        <ion-button fill="clear"
+                    slot="end">
+          View Sale
+          <ion-icon name="arrow-forward-sharp"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card>
+  </ion-virtual-scroll>
+
+  <!-- <no-data [data]="pageMessage"></no-data> -->
 </ion-content>

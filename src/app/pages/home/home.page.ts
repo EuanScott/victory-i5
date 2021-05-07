@@ -194,7 +194,7 @@ export class HomePage extends BasePage implements OnInit {
     }
   }
 
-  //#region MAccessors
+  //#region Accessors
 
   get headerData (): Models.Header {
     return this._headerData

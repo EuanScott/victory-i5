@@ -8,8 +8,6 @@ import {
   ToastController
 } from '@ionic/angular'
 
-import { appInjector } from './shared/helpers'
-
 import {
   AlertService,
   AppStateService,
@@ -17,6 +15,7 @@ import {
   LoaderService,
   ToastService
 } from './shared/services/index'
+import { appInjector } from './shared/helpers'
 
 export class BasePage {
 
@@ -63,7 +62,7 @@ export class BasePage {
     this._pageName = pageName
   }
 
-  ionViewDidEnter() {
+  ionViewDidEnter () {
     this.toastService.dismissToast()
   }
 }

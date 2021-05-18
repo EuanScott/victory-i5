@@ -57,6 +57,7 @@ ion-menu {
       padding: 176px 16px 64px 16px;
 
       ion-item {
+        --border-radius: 16px;
         &.selected {
           --background: rgba(var(--ion-color-primary-rgb), 0.14);
           --border-radius: 16px;
@@ -67,12 +68,15 @@ ion-menu {
           }
         }
 
-        ion-label {
-          font-weight: 500;
+        // ion-icon[slot=start] {
+        //   margin-inline-end: 24px;
+        // }
 
-          ion-badge {
-            color: var(--ion-color-white);
-          }
+        ion-badge {
+          --padding-top: 9px;
+          color: var(--ion-color-white);
+          height: 32px;
+          width: 32px;
         }
       }
     }

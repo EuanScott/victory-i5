@@ -3,9 +3,13 @@ ion-content {
     ion-item {
       border-top: 1px solid var(--ion-color-white);
 
-      ion-button {
-        margin: 11px 0 10px 0;
-        white-space: pre;
+      ion-text {
+        padding: 8px 0;
+
+        ion-icon {
+          position: relative;
+          top: 2px;
+        }
       }
     }
   }

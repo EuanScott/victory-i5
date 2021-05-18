@@ -1,7 +1,9 @@
 <ion-list>
   <ion-item *ngFor="let item of popoverItems"
             button
-            lines="none">
+            lines="none"
+            size-14
+            font-light>
     {{ item.label }}
     <ion-icon [name]="item.icon"
               slot="start"></ion-icon>

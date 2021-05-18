@@ -6,7 +6,7 @@ import * as Enums from '../..//shared/enums'
 import { BasePage } from '../../base'
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
@@ -14,6 +14,11 @@ export class HomePage extends BasePage implements OnInit {
 
   private _headerData: Models.Header = new Models.Header({
     title: this.appStateService.branchInfo.name
+  })
+
+  private _noPageData: Models.NoPageData = new Models.NoPageData({
+    icon: 'cloud-offline-outline',
+    text: 'Unable to display data as you are offline.'
   })
 
   private _salesData: Models.SalesSliderData[] = []
@@ -76,18 +81,20 @@ export class HomePage extends BasePage implements OnInit {
    * Initializes the Cash Totals data to be displayed on the page
    */
   private initializeCashTotals () {
-    this._progressBarData.push(new Models.ProgressBarData({
-      title: 'Cash In Till',
-      progress: this.dashboardService.getCashTotals().cashInTill,
-      target: this.appStateService.branchConfig.config.cashManagement.maxAmountInTill,
-      color: 'primary'
-    }))
-    this._progressBarData.push(new Models.ProgressBarData({
-      title: 'Cash In Safe',
-      progress: this.dashboardService.getCashTotals().cashInSafe,
-      target: this.appStateService.branchConfig.config.cashManagement.maxAmountInSafe,
-      color: 'secondary'
-    }))
+    this._progressBarData = [
+      new Models.ProgressBarData({
+        title: 'Cash In Till',
+        progress: this.dashboardService.getCashTotals().cashInTill,
+        target: this.appStateService.branchConfig.config.cashManagement.maxAmountInTill,
+        color: 'primary'
+      }),
+      new Models.ProgressBarData({
+        title: 'Cash In Safe',
+        progress: this.dashboardService.getCashTotals().cashInSafe,
+        target: this.appStateService.branchConfig.config.cashManagement.maxAmountInSafe,
+        color: 'secondary'
+      })
+    ]
   }
 
   /**
@@ -198,6 +205,10 @@ export class HomePage extends BasePage implements OnInit {
 
   get headerData (): Models.Header {
     return this._headerData
+  }
+
+  get noPageData (): Models.NoPageData {
+    return this._noPageData
   }
 
   get salesData (): Models.SalesSliderData[] {

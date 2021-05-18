@@ -9,14 +9,11 @@ import { BasePage } from '../../../base'
   templateUrl: './no-data.component.html',
   styleUrls: ['./no-data.component.scss'],
 })
-export class NoDataComponent extends BasePage implements OnInit {
+export class NoDataComponent extends BasePage {
 
   @Input('data') componentData: Models.NoPageData = null
 
   constructor () {
     super()
   }
-
-  ngOnInit () { }
-
 }

@@ -4,9 +4,16 @@
 
 <ion-content fullscreen="true"
              (ionScroll)="scrolling($event)">
-  <sales-data [data]="salesData"></sales-data>
 
-  <sales-graph [data]="saleTrendsData"></sales-graph>
+  <ng-container *ngIf="!appStateService.deviceConnectivity.connected">
+    <no-data [data]="noPageData"></no-data>
+  </ng-container>
 
-  <progress-bar [data]="progressBarData"></progress-bar>
+  <ng-container *ngIf="appStateService.deviceConnectivity.connected">
+    <sales-data [data]="salesData"></sales-data>
+
+    <sales-graph [data]="saleTrendsData"></sales-graph>
+
+    <progress-bar [data]="progressBarData"></progress-bar>
+  </ng-container>
 </ion-content>

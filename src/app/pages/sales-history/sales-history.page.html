@@ -4,7 +4,7 @@
 
 <ion-content>
   <ion-virtual-scroll [items]="items"
-                      approxItemHeight="320px">
+                      approxItemHeight="160px">
     <ion-card color="grey-light"
               *virtualItem="let item; let itemBounds = bounds;">
       <ion-card-content>
@@ -36,24 +36,12 @@
           <ion-row>
             <ion-col>
               <div class="ion-text-start">
-                71618821773
-              </div>
-            </ion-col>
-            <ion-col>
-              <div class="ion-text-end">
-                IN000000001
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <div class="ion-text-start">
                 Created Date
               </div>
             </ion-col>
             <ion-col>
               <div class="ion-text-end">
-                4/19/21, 1:14PM
+                19/4/21, 13:14
               </div>
             </ion-col>
           </ion-row>
@@ -61,19 +49,19 @@
       </ion-card-content>
 
       <ion-item color="grey-light"
-                lines="none">
-        <ion-label>
+                lines="none"
+                class="ion-activatable ripple-parent ion-no-padding">
+        <ion-ripple-effect></ion-ripple-effect>
+
+        <ion-label class="ion-padding-start">
           MWK 100
         </ion-label>
 
-        <ion-button fill="clear"
-                    slot="end">
+        <ion-text color="primary">
           View Sale
           <ion-icon name="arrow-forward-sharp"></ion-icon>
-        </ion-button>
+        </ion-text>
       </ion-item>
     </ion-card>
   </ion-virtual-scroll>
-
-  <!-- <no-data [data]="pageMessage"></no-data> -->
 </ion-content>

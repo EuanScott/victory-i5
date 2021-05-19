@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
 
 import * as Models from '../../shared/models'
 import * as Enums from '../../shared/enums'
 
 import { BasePage } from '../../base'
+import { IonContent } from '@ionic/angular'
 @Component({
   selector: 'sales-history',
   templateUrl: './sales-history.page.html',
@@ -22,6 +23,8 @@ export class SalesHistoryPage extends BasePage implements OnInit {
 
   items: any[] = [];
 
+  @ViewChild(IonContent, { static: false }) content: IonContent;
+
   constructor () {
     super()
 
@@ -36,10 +39,21 @@ export class SalesHistoryPage extends BasePage implements OnInit {
   ngOnInit () { }
 
 
-  //#region MAccessors
+  //#region Accessors
 
   get headerData (): Models.Header {
     return this._headerData
+  }
+
+  //#endregion
+
+  //#region Helpers
+
+  /**
+   * Scrolls the user to the top of the page
+   */
+   scrollToTop () {
+    this.content.scrollToTop(1500)
   }
 
   //#endregion

@@ -3,15 +3,7 @@
     <ion-menu contentId="main-content"
               type="overlay">
 
-      <div class="tester"> </div>
-
-      <ion-buttons slot="start">
-        <ion-button (click)="closeMenu()">
-          <ion-icon name="close-sharp"
-                    color="white">
-          </ion-icon>
-        </ion-button>
-      </ion-buttons>
+      <div class="header"></div>
 
       <ion-text color="white"
                 class="title">
@@ -51,14 +43,12 @@
         </ion-list>
       </ion-content>
 
-      <ion-footer class="ion-padding"
-                  color="primary">
+      <ion-footer class="ion-padding">
         <ion-grid class="ion-no-padding">
           <ion-row>
-            <ion-col class="col__logo">
-              <!-- <ion-img src="./assets/img/farmers-world-logo.png"></ion-img> -->
-            </ion-col>
-            <ion-col class="col__logout">
+            <ion-col class="col__logout"
+                     col="6"
+                     offset="6">
               <ion-button color="white"
                           fill="outline"
                           (click)="logout()">

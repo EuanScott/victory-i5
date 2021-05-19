@@ -2,7 +2,7 @@
   <header [data]="headerData"></header>
 </ion-header>
 
-<ion-content>
+<ion-content [scrollEvents]="true" >
   <ion-virtual-scroll [items]="items"
                       approxItemHeight="160px">
     <ion-card color="grey-light"
@@ -65,3 +65,14 @@
     </ion-card>
   </ion-virtual-scroll>
 </ion-content>
+
+<ion-footer>
+  <ion-fab vertical="bottom"
+           horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-outline"
+                color="white">
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

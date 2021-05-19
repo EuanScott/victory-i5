@@ -29,17 +29,10 @@ export class AppComponent {
   ) { }
 
   /**
-   * Closes the side-menu
-   */
-  closeMenu () {
-    this.menuController.close()
-  }
-
-  /**
    * Calls the closeMenu() method and sends the user to the login page
    */
-  logout () {
-    this.closeMenu()
+  logout (): void {
+    this.menuController.close()
     this.router.navigate(['/login'])
   }
 }

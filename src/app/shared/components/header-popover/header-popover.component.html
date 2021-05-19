@@ -1,9 +1,9 @@
-<ion-list>
+<ion-list class="ion-no-padding">
   <ion-item *ngFor="let item of popoverItems"
             button
             lines="none"
             size-14
-            font-light>
+            font-bold>
     {{ item.label }}
     <ion-icon [name]="item.icon"
               slot="start"></ion-icon>

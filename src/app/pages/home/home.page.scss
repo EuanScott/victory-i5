@@ -1,0 +1,12 @@
+ion-tab-bar {
+  --background: var(--ion-color-primary);
+  --border: none;
+  --color: white;
+  border-radius: 16px;
+  box-shadow: 0 0 2px var(--ion-color-medium-alt);
+  margin: 8px;
+
+  ion-tab-button {
+    --ripple-color: var(--ion-color-white);
+  }
+}

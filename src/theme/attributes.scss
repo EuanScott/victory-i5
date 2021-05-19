@@ -1,23 +1,48 @@
 //#region Font Family
 
-[font-bold] {
-  font-family: "FiraBold";
-}
+// [font-bold] {
+//   font-family: "FiraBold";
+// }
+
+// [font-light] {
+//   font-family: "FiraLight";
+// }
+
+// [font-medium] {
+//   font-family: "FiraMedium";
+// }
+
+// [font-regular-fira] {
+//   font-family: "FiraRegular";
+// }
+
+// [font-semi] {
+//   font-family: "FiraSemiBold";
+// }
+
 
 [font-light] {
-  font-family: "FiraLight";
+  font-family: "NunitoLight";
 }
 
-[font-medium] {
-  font-family: "FiraMedium";
+[font-light-italic] {
+  font-family: "NunitoLightItalic";
 }
 
 [font-regular] {
-  font-family: "FiraRegular";
+  font-family: "NunitoRegular";
 }
 
-[font-semi] {
-  font-family: "FiraSemiBold";
+[font-italic] {
+  font-family: "NunitoItalic";
+}
+
+[font-bold] {
+  font-family: "NunitoSemiBold";
+}
+
+[font-bold-italic] {
+  font-family: "NunitoSemiBoldItalic";
 }
 
 //#endregion
@@ -73,4 +98,3 @@
 }
 
 //#endregion
-

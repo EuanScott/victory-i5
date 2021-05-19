@@ -12,10 +12,10 @@
   --ion-color-primary-tint: #1acdf6;
 
   /** primary alt **/
-  --ion-color-primary-alt: #7FE3FA;
-  --ion-color-primary-alt-rgb: 127,227,250;
+  --ion-color-primary-alt: #7fe3fa;
+  --ion-color-primary-alt-rgb: 127, 227, 250;
   --ion-color-primary-alt-contrast: #000000;
-  --ion-color-primary-alt-contrast-rgb: 0,0,0;
+  --ion-color-primary-alt-contrast-rgb: 0, 0, 0;
   --ion-color-primary-alt-shade: #70c8dc;
   --ion-color-primary-alt-tint: #8ce6fb;
 
@@ -116,9 +116,7 @@
   --ion-color-light-tint: #dbdbdb;
 
   // Set the global font family
-  --ion-font-family: "FiraRegular";
-  font-size: 14px;
-  word-spacing: -2px;
+  --ion-font-family: "NunitoRegular";
 }
 
 //#region Custom Colors
@@ -222,6 +220,36 @@ body {
 @font-face {
   font-family: "FiraSemiBold";
   src: url("../assets/fonts/FiraCode-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "NunitoLight";
+  src: url("../assets/fonts/Nunito-Light.ttf");
+}
+
+@font-face {
+  font-family: "NunitoLightItalic";
+  src: url("../assets/fonts/Nunito-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "NunitoRegular";
+  src: url("../assets/fonts/Nunito-Regular.ttf");
+}
+
+@font-face {
+  font-family: "NunitoItalic";
+  src: url("../assets/fonts/Nunito-Italic.ttf");
+}
+
+@font-face {
+  font-family: "NunitoSemiBold";
+  src: url("../assets/fonts/Nunito-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "NunitoSemiBoldItalic";
+  src: url("../assets/fonts/Nunito-SemiBoldItalic.ttf");
 }
 
 //#endregion

@@ -16,12 +16,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'sales-history',
-    loadChildren: () => import('./pages/sales-history/sales-history.module').then( m => m.SalesHistoryPageModule)
+    path: 'sale-listing',
+    loadChildren: () => import('./pages/sales-history/sale-listing/sale-listing.module').then( m => m.SaleListingPageModule)
   },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'sale-details',
+    loadChildren: () => import('./pages/sales-history/sale-details/sale-details.module').then( m => m.SaleDetailsPageModule)
   }
 ];
 

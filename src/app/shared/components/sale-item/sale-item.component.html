@@ -1,9 +1,4 @@
-<ion-header>
-  <header [data]="headerData"></header>
-</ion-header>
-
-<ion-content [scrollEvents]="true" >
-  <ion-virtual-scroll [items]="items"
+<ion-virtual-scroll [items]="salesService.salesHistory"
                       approxItemHeight="160px">
     <ion-card color="grey-light"
               *virtualItem="let item; let itemBounds = bounds;">
@@ -17,7 +12,7 @@
             </ion-col>
             <ion-col>
               <div class="ion-text-end">
-                IN000000001
+                {{ item.sageInvoiceNumber }}
               </div>
             </ion-col>
           </ion-row>
@@ -29,7 +24,7 @@
             </ion-col>
             <ion-col>
               <div class="ion-text-end">
-                IN000000001
+                {{ item.victoryInvoiceNumber }}
               </div>
             </ion-col>
           </ion-row>
@@ -41,7 +36,7 @@
             </ion-col>
             <ion-col>
               <div class="ion-text-end">
-                19/4/21, 13:14
+                {{ item.dateCreated | date: 'M/d/yy, HH:mm' }}
               </div>
             </ion-col>
           </ion-row>
@@ -50,29 +45,18 @@
 
       <ion-item color="grey-light"
                 lines="none"
-                class="ion-activatable ripple-parent ion-no-padding">
+                class="ion-activatable ripple-parent ion-no-padding"
+                (click)="openSale(item)">
         <ion-ripple-effect></ion-ripple-effect>
 
         <ion-label class="ion-padding-start">
-          MWK 100
+          {{ item.value | currency: 'MWK ':'symbol':'0.0'}}
         </ion-label>
 
-        <ion-text color="primary">
-          View Sale
+        <ion-text [color]="item.color">
+          View {{ item.type | titlecase }}
           <ion-icon name="arrow-forward-sharp"></ion-icon>
         </ion-text>
       </ion-item>
     </ion-card>
   </ion-virtual-scroll>
-</ion-content>
-
-<ion-footer>
-  <ion-fab vertical="bottom"
-           horizontal="end">
-    <ion-fab-button>
-      <ion-icon name="chevron-up-outline"
-                color="white">
-      </ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-</ion-footer>

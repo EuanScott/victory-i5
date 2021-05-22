@@ -1,0 +1,17 @@
+<ion-header>
+  <header [data]="headerData"></header>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+  <ng-container *ngIf="!salesService.salesHistory.length">
+    <no-data [data]="noPageData"></no-data>
+  </ng-container>
+
+  <ng-container *ngIf="salesService.salesHistory.length">
+    <sale-item (openSaleEvent)="goToSaleDetails($event)"></sale-item>
+  </ng-container>
+</ion-content>
+
+<ion-footer>
+  <scroll-to-top (scrollToTopEvent)="scrollToTop()"></scroll-to-top>
+</ion-footer>

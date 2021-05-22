@@ -1,4 +1,4 @@
-//#region API/Provider Data
+import { SaleType } from '../enums/sale.enum'
 export class SalesKpi {
   totalSalesForDay: number
   totalSalesForWeek: number
@@ -35,11 +35,6 @@ export class Day {
   }
 }
 
-
-//#region
-
-//#region Page Data
-
 export class SalesSliderData {
   title: string
   name: string
@@ -56,4 +51,16 @@ export class SalesSliderData {
   }
 }
 
-//#endregion
+export interface SaleData {
+  sageInvoiceNumber: string
+  victoryInvoiceNumber: string
+  dateCreated: Date
+  value: number
+  type: SaleType
+  color: string
+}
+
+export interface SaleIdentifiers {
+  sageInvoiceNumber: string
+  type: string
+}

@@ -1,5 +1,3 @@
-//#region Api/Provider Data
-
 export class CashTotals {
   cashInTill: number
   cashInSafe: number
@@ -93,10 +91,7 @@ export class LastCollection {
   }
 }
 
-//#endregion
-
 //#region Page Data
-
 export class ProgressBarData {
   title: string
   progress: number
@@ -110,5 +105,3 @@ export class ProgressBarData {
     this.color = data &&data.color ? data.color : 'primary'
   }
 }
-
-//#endregion

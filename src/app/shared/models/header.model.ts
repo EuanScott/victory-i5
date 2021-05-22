@@ -1,5 +1,3 @@
-//#region Page Data
-
 export class Header {
   title: string
   showBackButton?: false
@@ -9,11 +7,8 @@ export class Header {
     this.showBackButton = data && data.showBackButton ? data.showBackButton : false
   }
 }
-
 export interface PopoverHeader {
   label: string
   action: string
   icon: string
 }
-
-//#endregion

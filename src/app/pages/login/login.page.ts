@@ -26,7 +26,6 @@ export class LoginPage extends BasePage implements OnInit {
    */
   updateAreaCode (code) {
     this._selectedAreaCode = code.detail.value
-    console.log(this._selectedAreaCode)
   }
 
   //#region Markup Getters

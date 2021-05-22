@@ -20,6 +20,10 @@ export class HeaderComponent extends BasePage implements OnInit {
 
   ngOnInit () { }
 
+  goBack() {
+    this.navController.back();
+  }
+
   /**
    * Opens a popover to display a list of options for the controller/printer
    *

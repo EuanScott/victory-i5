@@ -2,7 +2,7 @@
   <ion-buttons slot="start">
     <ion-menu-button *ngIf="!headerData.showBackButton"></ion-menu-button>
 
-    <ion-button *ngIf="headerData.showBackButton">
+    <ion-button *ngIf="headerData.showBackButton" (click)="goBack()">
       <ion-icon name="arrow-back-sharp">
       </ion-icon>
     </ion-button>

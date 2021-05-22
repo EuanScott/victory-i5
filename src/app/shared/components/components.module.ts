@@ -3,24 +3,30 @@ import { CommonModule } from '@angular/common'
 import { IonicModule } from '@ionic/angular'
 import { FormsModule } from '@angular/forms'
 
-import { KeypadComponent } from './keypad/keypad.component'
 import { HeaderComponent } from './header/header.component'
 import { HeaderPopoverComponent } from './header-popover/header-popover.component'
+import { KeypadComponent } from './keypad/keypad.component'
 import { NoDataComponent } from './no-data/no-data.component'
+import { SaleItemComponent } from './sale-item/sale-item.component'
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component'
 
 const IMPORTS = [
 ]
 const DECLARATIONS = [
-  KeypadComponent,
   HeaderComponent,
   HeaderPopoverComponent,
-  NoDataComponent
+  KeypadComponent,
+  NoDataComponent,
+  SaleItemComponent,
+  ScrollToTopComponent
 ]
 const EXPORTS = [
-  KeypadComponent,
   HeaderComponent,
   HeaderPopoverComponent,
-  NoDataComponent
+  KeypadComponent,
+  NoDataComponent,
+  SaleItemComponent,
+  ScrollToTopComponent
 ]
 const PROVIDERS = [
 ]

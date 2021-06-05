@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 
 import { BasePage } from '../../../base'
 
@@ -15,6 +15,8 @@ interface Key {
   styleUrls: ['./keypad.component.scss'],
 })
 export class KeypadComponent extends BasePage implements OnInit {
+
+  @Output() loginEvent = new EventEmitter()
 
   private _pinCode: string[] = []
 
@@ -58,11 +60,7 @@ export class KeypadComponent extends BasePage implements OnInit {
     }
 
     if (this._pinCode.length === 4) {
-
-      this.loaderService.presentLoader('login')
-      setTimeout(() => {
-        this.router.navigate(['/home'])
-      }, 1000);
+      this.loginEvent.emit()
     }
   }
 

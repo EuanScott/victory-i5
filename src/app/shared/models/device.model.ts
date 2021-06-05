@@ -1,14 +1,6 @@
 export interface DeviceInfo {
   battery: Battery,
-  coords: Coordinates,
-  manufacturer: string,
-  model: string,
-  serial: string,
-  shopId: string,
-  lastSeen: string,
-  versionNumber: string,
-  minimumServerVersion: string,
-  isVersionOutdated: boolean
+  coords: Coordinates
 }
 export interface Battery {
   level: number,

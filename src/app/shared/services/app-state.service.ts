@@ -34,29 +34,17 @@ export class AppStateService {
     coords: {
       latitude: null,
       longitude: null
-    },
-    manufacturer: null,
-    model: null,
-    serial: null,
-    shopId: null,
-    lastSeen: null,
-    versionNumber: null,
-    minimumServerVersion: null,
-    isVersionOutdated: null
+    }
   }
 
   branchConfig: Models.BranchConfig = {
-    id: 4,
-    companyId: 1,
-    locationId: "307",
-    locationName: "Kayoyo",
     config: {
       blindStockCounts: true,
-      quoteValidDays: 7,
-      taxPercentage: 16.5,
+      quoteValidDays: 0,
+      taxPercentage: 0,
       captureCustomerDetails: true,
       cashManagement: {
-        maxAmountInTill: 100000,
+        maxAmountInTill: 10000,
         maxAmountInSafe: 500000
       },
       defaultSupplyingLocation: {
@@ -81,8 +69,8 @@ export class AppStateService {
         }
       ],
       expenseReasons: null,
-      fispSeason: true,
-      saleDiscount: 5,
+      fispSeason: false,
+      saleDiscount: 0,
       isBulkLocation: false
     },
     createdAt: new Date(),

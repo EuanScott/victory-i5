@@ -1,3 +1,5 @@
+import { ExpenseType } from '../enums'
+
 export interface BranchInfo {
   companyId: number
   companyName: string
@@ -9,10 +11,6 @@ export interface BranchInfo {
 }
 
 export interface BranchConfig {
-  id: number
-  companyId: number
-  locationId: string
-  locationName: string
   config: Config
   createdAt: Date
   updatedAt: Date
@@ -45,7 +43,7 @@ export interface DefaultSupplyingLocation {
 
 export interface ExpenseReason {
   typeCode: number
-  type: Type
+  type: ExpenseType
   typeName: string
   typeDescription: string
   noteRequired: boolean
@@ -54,11 +52,6 @@ export interface ExpenseReason {
   referenceNumberHint: string
   referenceNumberCharacterLength: number
   active: boolean
-}
-
-export enum Type {
-  Expense = "Expense",
-  PayIn = "Pay In",
 }
 
 export interface PaymentMethod {

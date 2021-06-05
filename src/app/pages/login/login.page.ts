@@ -28,7 +28,15 @@ export class LoginPage extends BasePage implements OnInit {
     this._selectedAreaCode = code.detail.value
   }
 
-  //#region Markup Getters
+  login (): void {
+    this.loaderService.presentLoader('login')
+    this.loginService.handleLogin()
+    setTimeout(() => {
+      this.router.navigate(['/home'])
+    }, 1000);
+  }
+
+  //#region Accessors
 
   get areaCodes (): string[] {
     return this._areaCodes

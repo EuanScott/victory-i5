@@ -15,6 +15,7 @@ import {
   AppStateService,
   DashboardService,
   LoaderService,
+  LoginService,
   SalesService,
   ToastService
 } from './shared/services/index'
@@ -32,6 +33,7 @@ export class BasePage {
   protected appStateService: AppStateService
   protected dashboardService: DashboardService
   protected loaderService: LoaderService
+  protected loginService: LoginService
   protected salesService: SalesService
   protected toastService: ToastService
 
@@ -55,6 +57,7 @@ export class BasePage {
     this.appStateService = this.injector.get(AppStateService)
     this.dashboardService = this.injector.get(DashboardService)
     this.loaderService = this.injector.get(LoaderService)
+    this.loginService = this.injector.get(LoginService)
     this.salesService = this.injector.get(SalesService)
     this.toastService = this.injector.get(ToastService)
 

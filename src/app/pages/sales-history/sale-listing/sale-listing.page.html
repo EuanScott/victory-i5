@@ -8,7 +8,24 @@
   </ng-container>
 
   <ng-container *ngIf="salesService.salesHistory.length">
-    <sale-item (openSaleEvent)="goToSaleDetails($event)"></sale-item>
+    <ion-segment (ionChange)="segmentChanged($event)"
+                 mode="ios"
+                 value="sale">
+      <ion-segment-button value="sale">
+        <ion-label>
+          Sales
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="quote">
+        <ion-label>
+          Quotes
+        </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <sale-item (openSaleEvent)="goToSaleDetails($event)"
+               [data]="salesToDisplay">
+    </sale-item>
   </ng-container>
 </ion-content>
 

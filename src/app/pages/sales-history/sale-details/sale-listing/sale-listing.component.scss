@@ -1,0 +1,32 @@
+.sales-meta-data {
+  border-bottom: 2px dotted var(--ion-color-medium);
+  margin: 8px;
+
+  div {
+    display: inline-block;
+    padding: 8px;
+    width: 50%;
+  }
+}
+
+.product-listing {
+  background: var(--ion-color-grey-light);
+  border: 2px solid var(--ion-grey-light);
+  border-radius: 16px;
+  margin: 8px;
+
+  &.disabled {
+    border: 2px solid var(--ion-color-grey-light-shade);
+  }
+  &.issued {
+    border: 2px solid var(--ion-color-success);
+  }
+
+  ion-img {
+    background-color: var(--ion-color-white);
+    border-radius: 12px;
+    height: 90px;
+    overflow: hidden;
+    width: 90px;
+  }
+}

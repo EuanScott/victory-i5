@@ -1,62 +1,77 @@
-<ion-virtual-scroll [items]="salesService.salesHistory"
-                      approxItemHeight="160px">
-    <ion-card color="grey-light"
-              *virtualItem="let item; let itemBounds = bounds;">
-      <ion-card-content>
-        <ion-grid class="ion-no-padding">
-          <ion-row>
-            <ion-col>
-              <div class="ion-text-start">
-                Sage Invoice
-              </div>
-            </ion-col>
-            <ion-col>
-              <div class="ion-text-end">
-                {{ item.sageInvoiceNumber }}
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <div class="ion-text-start">
-                Victory Invoice
-              </div>
-            </ion-col>
-            <ion-col>
-              <div class="ion-text-end">
-                {{ item.victoryInvoiceNumber }}
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <div class="ion-text-start">
-                Created Date
-              </div>
-            </ion-col>
-            <ion-col>
-              <div class="ion-text-end">
-                {{ item.dateCreated | date: 'M/d/yy, HH:mm' }}
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
+<ion-virtual-scroll [items]="componentData"
+                    approxItemHeight="160px">
+  <ion-card color="grey-light"
+            *virtualItem="let item; let itemBounds = bounds;">
+    <ion-card-content>
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-start">
+              Sage Invoice
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-end">
+              {{ item.sageInvoiceNumber }}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-start">
+              Victory Invoice
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-end">
+              {{ item.victoryInvoiceNumber }}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-start">
+              Sale Reference No.
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-end">
+              {{ item.saleReferenceNumber }}
+            </div>
+          </ion-col>
+        </ion-row>
 
-      <ion-item color="grey-light"
-                lines="none"
-                class="ion-activatable ripple-parent ion-no-padding"
-                (click)="openSale(item)">
-        <ion-ripple-effect></ion-ripple-effect>
+        <div height-13></div>
 
-        <ion-label class="ion-padding-start">
-          {{ item.value | currency: 'MWK ':'symbol':'0.0'}}
-        </ion-label>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-start">
+              Created Date
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-end">
+              {{ item.dateCreated | date: 'M/d/yy, HH:mm' }}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
 
-        <ion-text [color]="item.color">
-          View {{ item.type | titlecase }}
-          <ion-icon name="arrow-forward-sharp"></ion-icon>
-        </ion-text>
-      </ion-item>
-    </ion-card>
-  </ion-virtual-scroll>
+    <ion-item color="grey-light"
+              lines="none"
+              class="ion-activatable ripple-parent ion-no-padding"
+              (click)="openSale(item)">
+      <ion-ripple-effect></ion-ripple-effect>
+
+      <ion-label class="ion-padding-start" [color]="item.color">
+        {{ item.value | currency: 'MWK ':'symbol':'0.0'}}
+      </ion-label>
+
+      <ion-text [color]="item.color">
+        View {{ item.type | titlecase }}
+        <ion-icon name="arrow-forward-sharp"></ion-icon>
+      </ion-text>
+    </ion-item>
+  </ion-card>
+</ion-virtual-scroll>

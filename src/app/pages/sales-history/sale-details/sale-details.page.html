@@ -4,4 +4,36 @@
 
 <ion-content>
 
+  <div class="sale-actions">
+    <ion-button color="primary"
+                expand="block"
+                [disabled]="isButtonDisabled()">
+      Credit Articles ({{ articlesToCredit }})
+    </ion-button>
+    <ion-button class="ion-text-capitalize"
+                color="secondary"
+                expand="block"
+                fill="outline">
+      Info
+    </ion-button>
+    <ion-button class="ion-text-capitalize"
+                color="secondary"
+                expand="block"
+                fill="outline"
+                [disabled]="isButtonDisabled()">
+      Add All
+    </ion-button>
+  </div>
+
+  <div class="cash-in-till">
+    <div class="ion-text-left">
+      Cash In Till
+    </div>
+    <div class="ion-text-right">
+      {{ cashInTill | currency: 'MWK ':'symbol':'0.0' }}
+    </div>
+  </div>
+
+  <sale-listing [data]="saleItem.saleItems"></sale-listing>
+
 </ion-content>

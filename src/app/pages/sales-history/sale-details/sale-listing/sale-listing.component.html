@@ -1,0 +1,45 @@
+<div class="sales-meta-data">
+  <div class="ion-text-left">
+    Sale Articles
+  </div>
+  <div class="ion-text-right">
+    <ion-text font-italic>
+      ({{ componentData.length }})
+    </ion-text>
+  </div>
+</div>
+
+<div height-1></div>
+
+<ion-grid *ngFor="let saleItem of componentData"
+          class="product-listing"
+          [ngClass]="getProductClass(saleItem)">
+  <ion-row>
+    <ion-col size="4">
+      <ion-img [src]="saleItem.image"></ion-img>
+    </ion-col>
+    <ion-col size="8">
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col>
+            <ion-text size-14>
+              {{ saleItem.name }}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text size-12>
+              {{ saleItem.amountStockPurchased | number: '1.0-0' }} Purchased
+            </ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text size-12>
+              {{ saleItem.amountStockRefundable | number: '1.0-0' }} Refundable
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-col>
+  </ion-row>
+</ion-grid>

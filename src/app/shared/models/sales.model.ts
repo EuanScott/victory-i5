@@ -51,16 +51,28 @@ export class SalesSliderData {
   }
 }
 
-export interface SaleData {
+export interface SaleHistory {
   sageInvoiceNumber: string
   victoryInvoiceNumber: string
+  saleReferenceNumber: string
   dateCreated: Date
   value: number
   type: SaleType
   color: string
+  saleItems?: SaleItem[]
+}
+
+export interface SaleItem {
+  name: string
+  sku: string
+  image: string
+  price: number
+  amountStockPurchased: number
+  amountStockRefundable: number
+  canCredit: boolean
 }
 
 export interface SaleIdentifiers {
-  sageInvoiceNumber: string
+  victoryInvoiceNumber: string
   type: string
 }

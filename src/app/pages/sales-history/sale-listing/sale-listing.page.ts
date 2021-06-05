@@ -13,6 +13,8 @@ import { BasePage } from '../../../base'
 })
 export class SaleListingPage extends BasePage implements OnInit {
 
+  @ViewChild(IonContent) content: IonContent
+
   private _headerData: Models.Header = new Models.Header({
     title: this.appStateService.branchInfo.name
   })
@@ -20,8 +22,7 @@ export class SaleListingPage extends BasePage implements OnInit {
     icon: 'storefront-outline',
     text: 'You have made no sales.'
   })
-
-  @ViewChild(IonContent) content: IonContent
+  private _salesToDisplay: Models.SaleHistory[]
 
   constructor () {
     super()
@@ -29,10 +30,24 @@ export class SaleListingPage extends BasePage implements OnInit {
 
   ngOnInit () {
     this.salesService.getSalesHistory()
+    this.setSalesToDisplay('sale')
+  }
+
+  /**
+   * Sets the Sales that are to be displayed on the page
+   * 
+   * @param saleType The sale type to be displayed on the page
+   */
+  private setSalesToDisplay (saleType: string): void {
+    this.salesToDisplay = this.salesService.salesHistory.filter(item => item.type === saleType)
   }
 
   goToSaleDetails (saleIdentifiers: Models.SaleIdentifiers | any): void {
     this.router.navigate(['sale-details'], saleIdentifiers)
+  }
+
+  segmentChanged (ev: any): void {
+    this.setSalesToDisplay(ev.detail.value)
   }
 
   //#region Accessors
@@ -43,6 +58,14 @@ export class SaleListingPage extends BasePage implements OnInit {
 
   get noPageData (): Models.NoPageData {
     return this._noPageData
+  }
+
+  get salesToDisplay (): Models.SaleHistory[] {
+    return this._salesToDisplay
+  }
+
+  set salesToDisplay (value: Models.SaleHistory[]) {
+    this._salesToDisplay = value
   }
 
   //#endregion

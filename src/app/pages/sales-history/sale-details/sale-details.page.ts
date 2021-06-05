@@ -1,6 +1,7 @@
-import { Component, OnInit, ɵallowSanitizationBypassAndThrow } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
 import *  as Models from '../../../shared/models'
+import * as Enums from '../../../shared/enums'
 
 import { BasePage } from '../../../base'
 
@@ -15,19 +16,32 @@ export class SaleDetailsPage extends BasePage implements OnInit {
     title: this.appStateService.branchInfo.name,
     showBackButton: true
   })
-
   private _saleIdentifiers: Models.SaleIdentifiers
+  private _saleItem: Models.SaleHistory
+  private _articlesToCredit: number
+
+  // TODO: Remove temp variable
+  cashInTill: number = 100000
 
   constructor () {
     super()
 
-    this.activatedRoute.queryParams.subscribe(_p => {
-      this.saleIdentifiers = this.router.getCurrentNavigation().extras
-    })
+    this.saleIdentifiers = this.router.getCurrentNavigation().extras
   }
 
-  ngOnInit () { }
+  ngOnInit () {
+    this.getPageData()
+  }
 
+  private getPageData (): void {
+    this.saleItem = this.salesService.getSaleItem(this.saleIdentifiers.victoryInvoiceNumber)
+
+    this.articlesToCredit = 0
+
+    for (let item of this.saleItem.saleItems) {
+      if (item.canCredit) this.articlesToCredit += 1
+    }
+  }
 
   //#region Accessors
 
@@ -41,6 +55,30 @@ export class SaleDetailsPage extends BasePage implements OnInit {
 
   set saleIdentifiers (value: Models.SaleIdentifiers | any) {
     this._saleIdentifiers = value
+  }
+
+  get articlesToCredit (): number {
+    return this._articlesToCredit
+  }
+
+  set articlesToCredit (value: number) {
+    this._articlesToCredit = value
+  }
+
+  get saleItem (): Models.SaleHistory {
+    return this._saleItem
+  }
+
+  set saleItem (value: Models.SaleHistory) {
+    this._saleItem = value
+  }
+
+  //#endregion
+
+  //#region Helpers
+
+  isButtonDisabled (): boolean {
+    return this.saleItem.type === Enums.SaleType.quote
   }
 
   //#endregion

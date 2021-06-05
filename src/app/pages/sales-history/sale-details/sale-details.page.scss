@@ -1,0 +1,19 @@
+.sale-actions {
+  text-align: center;
+
+  ion-button {
+    display: inline-block;
+  }
+}
+
+.cash-in-till {
+  border: 2px solid var(--ion-color-medium);
+  border-radius: 12px;
+  margin: 24px 8px 12px 8px;
+
+  div {
+    display: inline-block;
+    padding: 8px;
+    width: 50%;
+  }
+}

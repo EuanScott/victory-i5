@@ -51,6 +51,15 @@ export class SalesService {
       canCredit: true
     })
     tempSale.saleItems.push({
+      name: 'CASTEL BEER 330ML',
+      sku: '5053000000CAR101',
+      image: 'https://meridian-qa.victorycloudsales.com/media/product-5053000000CAR101-1601036518304.webp',
+      price: 405,
+      amountStockPurchased: 5,
+      amountStockRefundable: 5,
+      canCredit: true
+    })
+    tempSale.saleItems.push({
       name: 'Sprite 300ml',
       sku: '5053000000CAR003',
       image: '',

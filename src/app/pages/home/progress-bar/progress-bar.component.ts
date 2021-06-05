@@ -11,7 +11,7 @@ import { BasePage } from '../../../base'
 })
 export class ProgressBarComponent extends BasePage {
 
-  @Input('data') private _componentData: Models.SalesSliderData
+  @Input('data') private _componentData: Models.ProgressBarData
 
   constructor () {
     super()
@@ -19,7 +19,7 @@ export class ProgressBarComponent extends BasePage {
 
   //#region Markup Getters
 
-  get componentData () {
+  get componentData (): Models.ProgressBarData {
     return this._componentData
   }
 

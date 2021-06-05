@@ -8,7 +8,6 @@ const routes: Routes = [
     path: '',
     component: SaleListingPage
   },
-  // TODO: Figure out if this is needed
   {
     path: 'sale-details',
     loadChildren: () => import('../sale-details/sale-details.module').then( m => m.SaleDetailsPageModule)

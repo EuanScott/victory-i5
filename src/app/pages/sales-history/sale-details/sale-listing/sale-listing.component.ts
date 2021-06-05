@@ -38,7 +38,7 @@ export class SaleListingComponent extends BasePage implements OnInit {
 
   //#region Accessors
 
-  get componentData () {
+  get componentData (): Models.SaleItem[] {
     return this._componentData
   }
 

@@ -2,7 +2,8 @@
   <header [data]="headerData"></header>
 </ion-header>
 
-<ion-content [scrollEvents]="true">
+<ion-content [scrollEvents]="true"
+             (ionScroll)="scrolling($event)">
   <ng-container *ngIf="!salesService.salesHistory.length">
     <no-data [data]="noPageData"></no-data>
   </ng-container>
@@ -23,12 +24,25 @@
       </ion-segment-button>
     </ion-segment>
 
-    <sale-item (openSaleEvent)="goToSaleDetails($event)"
-               [data]="salesToDisplay">
-    </sale-item>
+    <ion-slides [options]="slideOpts"
+                #slides>
+      <ion-slide>
+        <sale-item (openSaleEvent)="goToSaleDetails($event)"
+                   [data]="sales">
+        </sale-item>
+      </ion-slide>
+      <ion-slide>
+        <sale-item (openSaleEvent)="goToSaleDetails($event)"
+                   [data]="quotes">
+        </sale-item>
+      </ion-slide>
+    </ion-slides>
   </ng-container>
 </ion-content>
 
 <ion-footer>
-  <scroll-to-top (scrollToTopEvent)="scrollToTop()"></scroll-to-top>
+  <!-- TODO: Make this fade-in -->
+  <scroll-to-top (scrollToTopEvent)="scrollToTop()"
+                 *ngIf="displayFab">
+  </scroll-to-top>
 </ion-footer>

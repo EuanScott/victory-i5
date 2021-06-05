@@ -3,6 +3,10 @@
 
   ion-button {
     display: inline-block;
+
+    &:first-of-type {
+      --color: white;
+    }
   }
 }
 

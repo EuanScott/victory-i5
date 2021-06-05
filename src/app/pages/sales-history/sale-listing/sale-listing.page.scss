@@ -2,3 +2,8 @@ ion-segment {
   margin: 8px;
   width: calc(100% - 16px);
 }
+
+// Ensures that the cards display in the slider
+sale-item {
+  width: 100%;
+}

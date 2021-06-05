@@ -16,7 +16,7 @@ export class LoginService {
 
   handleLogin (): void {
     this.getDeviceInfo()
-    this.getLocationInfo()
+    // this.getLocationInfo()
   }
 
   private async getDeviceInfo (): Promise<void> {

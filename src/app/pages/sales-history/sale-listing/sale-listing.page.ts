@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
-import { IonContent } from '@ionic/angular'
+import { IonSlides } from '@ionic/angular'
 
 import * as Models from '../../../shared/models'
 import * as Enums from '../../../shared/enums'
@@ -13,7 +13,7 @@ import { BasePage } from '../../../base'
 })
 export class SaleListingPage extends BasePage implements OnInit {
 
-  @ViewChild(IonContent) content: IonContent
+  @ViewChild('slides') slides: IonSlides;
 
   private _headerData: Models.Header = new Models.Header({
     title: this.appStateService.branchInfo.name
@@ -22,7 +22,12 @@ export class SaleListingPage extends BasePage implements OnInit {
     icon: 'storefront-outline',
     text: 'You have made no sales.'
   })
-  private _salesToDisplay: Models.SaleHistory[]
+  private _sales: Models.SaleHistory[]
+  private _quotes: Models.SaleHistory[]
+
+  slideOpts: any = {
+    allowTouchMove: false
+  }
 
   constructor () {
     super()
@@ -30,24 +35,29 @@ export class SaleListingPage extends BasePage implements OnInit {
 
   ngOnInit () {
     this.salesService.getSalesHistory()
-    this.setSalesToDisplay('sale')
+    this.setSalesToDisplay()
   }
 
   /**
    * Sets the Sales that are to be displayed on the page
-   * 
-   * @param saleType The sale type to be displayed on the page
    */
-  private setSalesToDisplay (saleType: string): void {
-    this.salesToDisplay = this.salesService.salesHistory.filter(item => item.type === saleType)
+  private setSalesToDisplay (): void {
+    console.log(this.salesService.salesHistory.length)
+    this.sales = this.salesService.salesHistory.filter(item => item.type === Enums.SaleType.sale)
+    console.log(this.sales.length)
+    this.quotes = this.salesService.salesHistory.filter(item => item.type === Enums.SaleType.quote)
+  }
+
+  segmentChanged (event: any): void {
+    if (event.detail.value === 'sale') {
+      this.slides.slidePrev()
+    } else {
+      this.slides.slideNext()
+    }
   }
 
   goToSaleDetails (saleIdentifiers: Models.SaleIdentifiers | any): void {
     this.router.navigate(['sale-details'], saleIdentifiers)
-  }
-
-  segmentChanged (ev: any): void {
-    this.setSalesToDisplay(ev.detail.value)
   }
 
   //#region Accessors
@@ -60,13 +70,22 @@ export class SaleListingPage extends BasePage implements OnInit {
     return this._noPageData
   }
 
-  get salesToDisplay (): Models.SaleHistory[] {
-    return this._salesToDisplay
+  get sales (): Models.SaleHistory[] {
+    return this._sales
   }
 
-  set salesToDisplay (value: Models.SaleHistory[]) {
-    this._salesToDisplay = value
+  set sales (value: Models.SaleHistory[]) {
+    this._sales = value
+  }
+
+  get quotes (): Models.SaleHistory[] {
+    return this._quotes
+  }
+
+  set quotes (value: Models.SaleHistory[]) {
+    this._quotes = value
   }
 
   //#endregion
+
 }

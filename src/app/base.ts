@@ -51,6 +51,9 @@ export class BasePage {
   // Page Variables
   private _pageName: string
 
+  protected displayFab: boolean
+
+
   constructor (pageName: string = '') {
     // Custom Services
     this.alertService = this.injector.get(AlertService)
@@ -78,13 +81,28 @@ export class BasePage {
 
   ionViewDidEnter () {
     this.toastService.dismissToast()
+    this.displayFab = false
   }
 
   /**
    * Scrolls the user to the top of the page
    */
-   scrollToTop () {
+  scrollToTop (): void {
     this.content.scrollToTop(800)
+  }
+
+  /**
+   * Note: 
+   * To use this method, the following code needs to be added to <ion-content>:
+   *
+   * <ion-content [scrollEvents]="true" (ionScroll)="scrolling($event)">
+   * 
+   * @param event The scroll event
+   */
+  scrolling (event): void {
+    const bottomPosition = event.target.clientHeight + event.detail.scrollTop
+    const screenSize = event.target.clientHeight
+    this.displayFab = screenSize - bottomPosition <= -320
   }
 }
 

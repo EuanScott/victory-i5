@@ -12,7 +12,7 @@ import { BasePage } from '../../../base'
 })
 export class SaleItemComponent extends BasePage implements OnInit {
 
-  @Input('data') private _componentData: Models.SalesSliderData
+  @Input('data') private _componentData: Models.SaleHistory[]
   @Output() openSaleEvent = new EventEmitter()
 
   constructor () {
@@ -32,7 +32,7 @@ export class SaleItemComponent extends BasePage implements OnInit {
 
   //#region Markup Getters
 
-  get componentData () {
+  get componentData (): Models.SaleHistory[] {
     return this._componentData
   }
 

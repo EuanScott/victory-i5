@@ -13,7 +13,7 @@ import { BasePage } from '../../../base'
 export class SaleDetailsPage extends BasePage implements OnInit {
 
   private _headerData: Models.Header = new Models.Header({
-    title: this.appStateService.branchInfo.name,
+    title: 'Sale Details', //this.appStateService.branchInfo.name,
     showBackButton: true
   })
   private _saleIdentifiers: Models.SaleIdentifiers
@@ -31,6 +31,7 @@ export class SaleDetailsPage extends BasePage implements OnInit {
 
   ngOnInit () {
     this.getPageData()
+    this._headerData.title = this.saleIdentifiers.victoryInvoiceNumber
   }
 
   private getPageData (): void {

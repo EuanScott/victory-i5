@@ -16,7 +16,7 @@ export class SaleListingPage extends BasePage implements OnInit {
   @ViewChild('slides') slides: IonSlides;
 
   private _headerData: Models.Header = new Models.Header({
-    title: this.appStateService.branchInfo.name
+    title: 'Sales History' //this.appStateService.branchInfo.name
   })
   private _noPageData: Models.NoPageData = new Models.NoPageData({
     icon: 'storefront-outline',
@@ -42,9 +42,7 @@ export class SaleListingPage extends BasePage implements OnInit {
    * Sets the Sales that are to be displayed on the page
    */
   private setSalesToDisplay (): void {
-    console.log(this.salesService.salesHistory.length)
     this.sales = this.salesService.salesHistory.filter(item => item.type === Enums.SaleType.sale)
-    console.log(this.sales.length)
     this.quotes = this.salesService.salesHistory.filter(item => item.type === Enums.SaleType.quote)
   }
 

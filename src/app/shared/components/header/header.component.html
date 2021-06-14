@@ -1,8 +1,8 @@
 <ion-toolbar>
   <ion-buttons slot="start">
-    <ion-menu-button *ngIf="!headerData.showBackButton"></ion-menu-button>
+    <ion-menu-button *ngIf="!componentData.showBackButton"></ion-menu-button>
 
-    <ion-button *ngIf="headerData.showBackButton"
+    <ion-button *ngIf="componentData.showBackButton"
                 (click)="goBack()">
       <ion-icon name="arrow-back-sharp">
       </ion-icon>
@@ -10,7 +10,7 @@
   </ion-buttons>
 
   <ion-title>
-    {{ headerData.title }}
+    {{ componentData.title }}
   </ion-title>
 
   <ion-buttons slot="end"
@@ -22,23 +22,18 @@
                 name="battery-half-outline"></ion-icon>
 
       <!-- Connection -->
-      <ion-icon *ngIf="appStateService.deviceConnectivity.connected"
-                color="success"
-                name="wifi-outline">
-      </ion-icon>
-      <ion-icon *ngIf="!appStateService.deviceConnectivity.connected"
-                color="danger"
-                name="cloud-offline-outline">
+      <ion-icon [color]="appStateService.deviceConnectivity.connected ? 'success' : 'danger'"
+                [name]="appStateService.deviceConnectivity.connected ? 'wifi-outline' : 'cloud-offline-outline'">
       </ion-icon>
 
       <!-- Fiscal Printer -->
-      <ion-icon name="document-outline"
-                [color]="appStateService.deviceConnectivity.fiscalConnected ? 'primary' : 'danger'">
+      <ion-icon [color]="appStateService.deviceConnectivity.fiscalConnected ? 'primary' : 'danger'"
+                name="document-outline">
       </ion-icon>
 
       <!-- Controller -->
-      <ion-icon name="print-outline"
-                [color]="appStateService.deviceConnectivity.piConnected  && appStateService.deviceConnectivity.printerConnected ? 'secondary' : 'danger'">
+      <ion-icon [color]="appStateService.deviceConnectivity.piConnected  && appStateService.deviceConnectivity.printerConnected ? 'secondary' : 'danger'"
+                name="print-outline">
       </ion-icon>
     </ion-button>
   </ion-buttons>

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 
-import { HeaderPopoverComponent } from '../header-popover/header-popover.component'
 import * as Models from '../../models/index'
+import { HeaderPopoverComponent } from '../header-popover/header-popover.component'
 
 import { BasePage } from '../../../base'
 
@@ -12,16 +12,32 @@ import { BasePage } from '../../../base'
 })
 export class HeaderComponent extends BasePage implements OnInit {
 
-  @Input('data') headerData: Models.Header
+  @Input('data') private _componentData: Models.Header
 
   constructor () {
     super()
   }
 
-  ngOnInit () { }
+  ngOnInit () {
+    this.updateComponentData()
+  }
 
-  goBack() {
-    this.navController.back();
+  /**
+   * Updates the Header data with placeholders if certain content does not exist on the object
+   */
+  private updateComponentData (): void {
+    if (!this.componentData) {
+      console.log('no data')
+      setTimeout(_ => this.updateComponentData(), 30)
+    } else {
+      if (!this.componentData.title) {
+        this.componentData.title = this.appStateService.branchInfo.name
+      }
+    }
+  }
+
+  goBack (): void {
+    this.navController.back()
   }
 
   /**
@@ -29,14 +45,22 @@ export class HeaderComponent extends BasePage implements OnInit {
    *
    * @param event Ensures that the popover is displayed over the button and not anywhere else
    */
-  async presentPopover (event: any) {
+  async presentPopover (event: any): Promise<void> {
     const popover = await this.popoverController.create({
       component: HeaderPopoverComponent,
       cssClass: 'header__popover',
       event,
       translucent: true
-    });
-    return await popover.present();
+    })
+
+    return await popover.present()
   }
 
+  //#region Accessors
+
+  get componentData (): Models.Header {
+    return this._componentData
+  }
+
+  //#endregion
 }

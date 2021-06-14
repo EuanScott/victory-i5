@@ -5,7 +5,6 @@
 <div align="center" style="margin: auto; padding-top: 16px">
   <img src="../src/assets/img/logo.svg"/>
 </div>
-<!-- ![Victory](./src/assets/img/logo.svg) -->
 
 # Documentation for the Mobile App
 ## Table of Contents
@@ -16,8 +15,8 @@
 5. [Page Breakdown](#page-breakdown)  
   5.1. [Login](#login)  
   5.2. [Dashboard](#dashboard)
-6. [Disclaimer](#disclaimer)
-7. [Resources](#resources)
+6. [Resources](#resources)
+7. [Disclaimer](#disclaimer)
 
 <br/>
 
@@ -51,6 +50,16 @@ The motivation behind the update of the Mobile app outside of normal business ho
 To quote _Mahatma Gandhi_ <small>(even though it is a fanciful quotation)</small>:
 
 > Be the change you wish to see in the world.
+
+<br/>
+
+# Code specific Documentation
+1. [Components][md_1]
+2. [Enums][md_2]
+3. [Helpers][md_3]
+4. [Models][md_4]
+5. [Services][md_5]
+6. [Theming][md_6]
 
 <br/>
 
@@ -119,6 +128,12 @@ __Business Rules:__
 
 [comment]: <Links to documentation files that will be in each of the respective folders in the main app file structure (src)>
 [md_1]: ../src/app/shared/models/models.md
+[md_2]: ../src/app/shared/enums/enum.md
+[md_3]: ../src/app/shared/models/models.md
+[md_4]: ../src/app/shared/models/model.md
+[md_5]: ../src/app/shared/models/models.md
+[md_6]: ../src/app/shared/models/models.md
+
 
 [comment]: <Web links to external websites>
 [web_1]: http://vectra.co.za

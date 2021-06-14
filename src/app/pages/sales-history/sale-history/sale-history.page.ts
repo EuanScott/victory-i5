@@ -7,11 +7,11 @@ import * as Enums from '../../../shared/enums'
 import { BasePage } from '../../../base'
 
 @Component({
-  selector: 'sale-listing',
-  templateUrl: './sale-listing.page.html',
-  styleUrls: ['./sale-listing.page.scss'],
+  selector: 'sale-history',
+  templateUrl: './sale-history.page.html',
+  styleUrls: ['./sale-history.page.scss'],
 })
-export class SaleListingPage extends BasePage implements OnInit {
+export class SaleHistoryPage extends BasePage implements OnInit {
 
   @ViewChild('slides') slides: IonSlides;
 

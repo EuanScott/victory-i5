@@ -27,14 +27,14 @@
     <ion-slides [options]="slideOpts"
                 #slides>
       <ion-slide>
-        <sale-item (openSaleEvent)="goToSaleDetails($event)"
+        <sale-information (openSaleEvent)="goToSaleDetails($event)"
                    [data]="sales">
-        </sale-item>
+        </sale-information>
       </ion-slide>
       <ion-slide>
-        <sale-item (openSaleEvent)="goToSaleDetails($event)"
+        <sale-information (openSaleEvent)="goToSaleDetails($event)"
                    [data]="quotes">
-        </sale-item>
+        </sale-information>
       </ion-slide>
     </ion-slides>
   </ng-container>

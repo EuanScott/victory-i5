@@ -7,7 +7,6 @@ import { HeaderComponent } from './header/header.component'
 import { HeaderPopoverComponent } from './header-popover/header-popover.component'
 import { KeypadComponent } from './keypad/keypad.component'
 import { NoDataComponent } from './no-data/no-data.component'
-import { SaleItemComponent } from './sale-item/sale-item.component'
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component'
 
 const IMPORTS = [
@@ -17,7 +16,6 @@ const DECLARATIONS = [
   HeaderPopoverComponent,
   KeypadComponent,
   NoDataComponent,
-  SaleItemComponent,
   ScrollToTopComponent
 ]
 const EXPORTS = [
@@ -25,7 +23,6 @@ const EXPORTS = [
   HeaderPopoverComponent,
   KeypadComponent,
   NoDataComponent,
-  SaleItemComponent,
   ScrollToTopComponent
 ]
 const PROVIDERS = [

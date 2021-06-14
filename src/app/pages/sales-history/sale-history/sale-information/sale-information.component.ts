@@ -1,16 +1,16 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
-import * as Models from '../../models'
-import * as Enums from '../../enums'
+import * as Models from '../../../../shared/models'
+import * as Enums from '../../../../shared/enums'
 
-import { BasePage } from '../../../base'
+import { BasePage } from '../../../../base'
 
 @Component({
-  selector: 'sale-item',
-  templateUrl: './sale-item.component.html',
-  styleUrls: ['./sale-item.component.scss'],
+  selector: 'sale-information',
+  templateUrl: './sale-information.component.html',
+  styleUrls: ['./sale-information.component.scss'],
 })
-export class SaleItemComponent extends BasePage implements OnInit {
+export class SaleInformationComponent extends BasePage implements OnInit {
 
   @Input('data') private _componentData: Models.SaleHistory[]
   @Output() openSaleEvent = new EventEmitter()

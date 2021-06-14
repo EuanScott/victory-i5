@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'sale-listing',
-    loadChildren: () => import('./pages/sales-history/sale-listing/sale-listing.module').then( m => m.SaleListingPageModule)
+    path: 'sale-history',
+    loadChildren: () => import('./pages/sales-history/sale-history/sale-history.module').then( m => m.SaleHistoryPageModule)
   },
   {
     path: 'login',

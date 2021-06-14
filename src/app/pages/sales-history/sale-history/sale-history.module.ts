@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms'
 
 import { IonicModule } from '@ionic/angular'
 
-import { SaleListingPageRoutingModule } from './sale-listing-routing.module'
+import { SaleHistoryPageRoutingModule } from './sale-history-routing.module'
 import { ComponentsModule } from '../../../shared/components/components.module'
 
-import { SaleListingPage } from './sale-listing.page'
+import { SaleInformationComponent } from './sale-information/sale-information.component'
+
+import { SaleHistoryPage } from './sale-history.page'
 
 @NgModule({
   imports: [
@@ -15,10 +17,11 @@ import { SaleListingPage } from './sale-listing.page'
     FormsModule,
     IonicModule,
     ComponentsModule,
-    SaleListingPageRoutingModule
+    SaleHistoryPageRoutingModule
   ],
   declarations: [
-    SaleListingPage
+    SaleHistoryPage,
+    SaleInformationComponent
   ]
 })
-export class SaleListingPageModule { }
+export class SaleHistoryPageModule { }

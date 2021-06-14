@@ -5,11 +5,11 @@ import *  as Models from '../../../../shared/models'
 import { BasePage } from '../../../../base'
 
 @Component({
-  selector: 'sale-listing',
-  templateUrl: './sale-listing.component.html',
-  styleUrls: ['./sale-listing.component.scss'],
+  selector: 'sale-articles',
+  templateUrl: './sale-articles.component.html',
+  styleUrls: ['./sale-articles.component.scss'],
 })
-export class SaleListingComponent extends BasePage implements OnInit {
+export class SaleArticlesComponent extends BasePage implements OnInit {
 
   @Input('data') private _componentData: Models.SaleItem[]
 

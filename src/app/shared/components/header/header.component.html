@@ -18,8 +18,9 @@
     <ion-button (click)="presentPopover($event)">
       <!-- Battery Level -->
       <ion-icon *ngIf="appStateService.deviceInfo.battery.level <= 30"
-                color="danger"
-                name="battery-half-outline"></ion-icon>
+                [color]="appStateService.deviceInfo.battery.charging ? 'warning' : 'danger'"
+                name="battery-half-outline">
+      </ion-icon>
 
       <!-- Connection -->
       <ion-icon [color]="appStateService.deviceConnectivity.connected ? 'success' : 'danger'"

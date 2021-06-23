@@ -1,21 +1,22 @@
-<div *ngFor="let dataEntry of componentData"
+<div *ngFor="let item of componentData"
      class="ion-padding">
   <div class="ion-text-left">
     <ion-text>
-      {{ dataEntry.title }}
+      {{ item.title }}
     </ion-text>
   </div>
 
   <div class="ion-text-right">
-    <ion-text>MKW {{ dataEntry.progress | number:'1.0' }}
+    <ion-text>
+      MKW {{ item.progress | number:'1.0' }}
     </ion-text>
     <ion-text color="medium">
-      / {{ dataEntry.target | number:'1.0' }}
+      / {{ item.target | number:'1.0' }}
     </ion-text>
   </div>
 
-  <ion-progress-bar value="{{ dataEntry.progress / dataEntry.target }}"
-                    buffer="{{ dataEntry.progress / dataEntry.target }}"
-                    color="{{ dataEntry.color }}">
+  <ion-progress-bar [value]="item.progress / item.target"
+                    [buffer]="item.progress / item.target"
+                    [color]="item.color">
   </ion-progress-bar>
 </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as Models from '../../shared/models'
-import * as Enums from '../..//shared/enums'
 
 import { BasePage } from '../../base'
 
@@ -13,7 +12,6 @@ import { BasePage } from '../../base'
 export class HomePage extends BasePage implements OnInit {
 
   private _headerData: Models.Header = new Models.Header({})
-
   private _noPageData: Models.NoPageData = new Models.NoPageData({
     icon: 'cloud-offline-outline',
     text: 'Unable to display data as you are offline.'
@@ -220,7 +218,6 @@ export class HomePage extends BasePage implements OnInit {
   get progressBarData (): Models.ProgressBarData[] {
     return this._progressBarData
   }
-
 
   //#endregion
 

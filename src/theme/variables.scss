@@ -2,6 +2,7 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+// TODO: Set up the app theming with the correct color scheme
 :root {
   /** primary **/
   --ion-color-primary: #00c7f5;
@@ -28,12 +29,12 @@
   --ion-color-secondary-tint: #5b4996;
 
   /** tertiary **/
-  --ion-color-tertiary: #ff2f2b;
-  --ion-color-tertiary-rgb: 255, 47, 43;
-  --ion-color-tertiary-contrast: #ffffff;
-  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #e02926;
-  --ion-color-tertiary-tint: #ff4440;
+  --ion-color-tertiary: #80ce7d;
+  --ion-color-tertiary-rgb: 128, 206, 125;
+  --ion-color-tertiary-contrast: #000000;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #71b56e;
+  --ion-color-tertiary-tint: #8dd38a;
 
   /** success **/
   --ion-color-success: #80ce7d;
@@ -44,12 +45,12 @@
   --ion-color-success-tint: #8dd38a;
 
   /** warning **/
-  --ion-color-warning: #80ce7d;
-  --ion-color-warning-rgb: 128, 206, 125;
+  --ion-color-warning: #f4d46c;
+  --ion-color-warning-rgb: 244, 212, 108;
   --ion-color-warning-contrast: #000000;
   --ion-color-warning-contrast-rgb: 0, 0, 0;
-  --ion-color-warning-shade: #71b56e;
-  --ion-color-warning-tint: #8dd38a;
+  --ion-color-warning-shade: #d7bb5f;
+  --ion-color-warning-tint: #f5d87b;
 
   /** danger **/
   --ion-color-danger: #ff2f2b;

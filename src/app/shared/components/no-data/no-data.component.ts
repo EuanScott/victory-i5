@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
 import * as Models from '../../models'
 
@@ -11,9 +11,17 @@ import { BasePage } from '../../../base'
 })
 export class NoDataComponent extends BasePage {
 
-  @Input('data') componentData: Models.NoPageData = null
+  @Input('data') private _componentData: Models.NoPageData = null
 
   constructor () {
     super()
   }
+
+  //#region Accessors
+
+  get componentData(): Models.NoPageData {
+    return this._componentData
+  }
+
+  //#endregion
 }

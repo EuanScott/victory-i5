@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
 import * as Models from '../../../shared/models'
 
@@ -17,7 +17,7 @@ export class ProgressBarComponent extends BasePage {
     super()
   }
 
-  //#region Markup Getters
+  //#region Accessors
 
   get componentData (): Models.ProgressBarData {
     return this._componentData

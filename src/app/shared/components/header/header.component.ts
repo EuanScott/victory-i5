@@ -27,7 +27,6 @@ export class HeaderComponent extends BasePage implements OnInit {
    */
   private updateComponentData (): void {
     if (!this.componentData) {
-      console.log('no data')
       setTimeout(_ => this.updateComponentData(), 30)
     } else {
       if (!this.componentData.title) {

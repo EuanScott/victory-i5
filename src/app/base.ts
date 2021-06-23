@@ -21,6 +21,9 @@ import {
 } from './shared/services/index'
 import { appInjector } from './shared/helpers'
 
+import * as Models from './shared/models'
+import * as Enums from './shared/enums'
+
 export class BasePage {
 
   @ViewChild(IonContent) content: IonContent
@@ -49,8 +52,7 @@ export class BasePage {
   protected router: Router
 
   // Page Variables
-  private _pageName: string
-
+  private _displayingOfflineToast: boolean
   protected displayFab: boolean
 
 
@@ -76,7 +78,7 @@ export class BasePage {
     this.router = this.injector.get(Router)
 
     // Page Variables
-    this._pageName = pageName
+    this._displayingOfflineToast = false
   }
 
   ionViewDidEnter () {
@@ -103,6 +105,40 @@ export class BasePage {
     const bottomPosition = event.target.clientHeight + event.detail.scrollTop
     const screenSize = event.target.clientHeight
     this.displayFab = screenSize - bottomPosition <= -320
+  }
+
+
+  /**
+   * Displays a toast to the user informing them that they can't access the page as they are offline
+   * 
+   * @param pageName The name of the page that cannot be accessed by the user
+   */
+  offlineToastMessage (pageName: string): Promise<void> {
+    if(!this._displayingOfflineToast) {
+      this._displayingOfflineToast = true
+      setTimeout(_ => this._displayingOfflineToast = false, 3000)
+
+    const message: string = `${pageName} not available while offline!`
+    const toastOptions: Models.ToastOptions = {
+      header: `You're Offline`,
+      type: Enums.ToastType.danger,
+      position: Enums.ToastPosition.top,
+      duration: 3000,
+      button: new Models.ToastButton({
+        side: Enums.ToastButtonSide.end,
+        icon: 'cloud-offline-outline',
+        text: null,
+        role: 'cancel'
+      })
+    }
+
+    return this.toastService.presentToast(message, toastOptions)
+      .then(async _ => {
+        const { role } = await this.toastService.toast.onDidDismiss();
+        this._displayingOfflineToast = false
+        console.log('Users action: ', role);
+      })
+    }
   }
 }
 

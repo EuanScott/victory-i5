@@ -19,7 +19,7 @@ export class AppComponent {
     { title: 'Stock Count', url: '/folder/Spam', icon: 'storefront-outline' },
     { title: 'LLTC', url: '/folder/LLTC', icon: 'leaf-outline' },
     { title: 'SGA', url: '/folder/SGA', icon: 'train-outline' },
-    { title: 'Reports', url: '/folder/Reports', icon: 'analytics-outline' }
+    { title: 'Reports', url: '/reports', icon: 'analytics-outline' }
   ]
 
   constructor (
